@@ -14,7 +14,8 @@ struct MainMoviesListWireframe {
       
       let mainMoviesListView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainMoviesListView") as! MainMoviesListView
 
-      let apiDataManager = TmdbApiDataManager()
+      let apiService = TmdbApiService()
+      let apiDataManager = TmdbApiDataManager(apiService: apiService)
       
       let mainMoviesListInteractor = MainMoviesListInteractor(apiDataManager: apiDataManager)
       mainMoviesListView.presenter = MainMoviesListPresenter(interactor: mainMoviesListInteractor, wireframe: MainMoviesListWireframe())

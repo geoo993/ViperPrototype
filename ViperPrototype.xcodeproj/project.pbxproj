@@ -25,6 +25,7 @@
 		20A6800D1C6F57B500898298 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 20A680071C6F54C800898298 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20A6800F1C6F8AE000898298 /* MainMoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A6800E1C6F8AE000898298 /* MainMoviesListViewModel.swift */; };
 		20A680111C6F9E2500898298 /* MainMoviesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A680101C6F9E2500898298 /* MainMoviesListCell.swift */; };
+		20C5304B1C6FB996008D1056 /* TmdbApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5304A1C6FB996008D1056 /* TmdbApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		20A680071C6F54C800898298 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		20A6800E1C6F8AE000898298 /* MainMoviesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMoviesListViewModel.swift; sourceTree = "<group>"; };
 		20A680101C6F9E2500898298 /* MainMoviesListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMoviesListCell.swift; sourceTree = "<group>"; };
+		20C5304A1C6FB996008D1056 /* TmdbApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				20A67FCB1C6F3A5700898298 /* DataManager */,
 				20A67FCC1C6F3A5700898298 /* Model */,
 				20A67FC61C6F38A400898298 /* Modules */,
+				20C530491C6FB983008D1056 /* Services */,
 			);
 			path = ViperPrototype;
 			sourceTree = "<group>";
@@ -235,6 +238,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		20C530491C6FB983008D1056 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				20C5304A1C6FB996008D1056 /* TmdbApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20A67FD61C6F3AB800898298 /* MainMoviesListInteractor.swift in Sources */,
+				20C5304B1C6FB996008D1056 /* TmdbApiService.swift in Sources */,
 				20A67FDA1C6F3AD500898298 /* TmdbApiDataManager.swift in Sources */,
 				20A67FD41C6F3AA900898298 /* MainMoviesListPresenter.swift in Sources */,
 				20A67FD21C6F3A6100898298 /* MainMoviesListView.swift in Sources */,

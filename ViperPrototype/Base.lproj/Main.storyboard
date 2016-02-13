@@ -33,25 +33,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aSX-Nh-R95">
-                                <rect key="frame" x="29" y="119.5" width="551" height="480.5"/>
+                                <rect key="frame" x="0.0" y="119.5" width="600" height="480.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CDa-aT-Mso">
-                                    <size key="itemSize" width="551" height="130"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CDa-aT-Mso">
+                                    <size key="itemSize" width="560" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainMoviesListCell" id="OjG-tf-cAZ" customClass="MainMoviesListCell" customModule="ViperPrototype" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="551" height="130"/>
+                                        <rect key="frame" x="20" y="0.0" width="560" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="551" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="oOW-sN-76f">
-                                                    <rect key="frame" x="16" y="47.5" width="519" height="35.5"/>
+                                                    <rect key="frame" x="16" y="47.5" width="528" height="35.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="30"/>
                                                     <nil key="highlightedColor"/>
@@ -78,11 +78,11 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aSX-Nh-R95" secondAttribute="bottom" id="0WO-KZ-x1N"/>
                             <constraint firstItem="1aF-eI-C6k" firstAttribute="top" secondItem="dtg-tC-HYV" secondAttribute="bottom" constant="8" id="42q-tl-Puz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aSX-Nh-R95" secondAttribute="trailing" id="LWE-cc-SOg"/>
+                            <constraint firstAttribute="trailing" secondItem="aSX-Nh-R95" secondAttribute="trailing" id="LWE-cc-SOg"/>
                             <constraint firstItem="1aF-eI-C6k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gsX-8b-HzH"/>
                             <constraint firstItem="dtg-tC-HYV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hxp-kR-1FV"/>
                             <constraint firstItem="aSX-Nh-R95" firstAttribute="top" secondItem="1aF-eI-C6k" secondAttribute="bottom" constant="32" id="io2-I9-vLB"/>
-                            <constraint firstItem="aSX-Nh-R95" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="uNU-0e-YIG"/>
+                            <constraint firstItem="aSX-Nh-R95" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uNU-0e-YIG"/>
                             <constraint firstItem="dtg-tC-HYV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x5T-iY-Pp6"/>
                         </constraints>
                     </view>

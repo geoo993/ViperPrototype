@@ -10,6 +10,19 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+class MainMoviesListCollectionFLowLayout: UICollectionViewFlowLayout {
+
+   override var itemSize: CGSize {
+      get {
+         return CGSize(width: collectionView!.contentSize.width, height: 130)
+      }
+      set {
+      
+      }
+   }
+   
+}
+
 class MainMoviesListView: UIViewController {
 
    @IBOutlet weak private var totalMoviesLabel: UILabel!
@@ -24,12 +37,22 @@ class MainMoviesListView: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
 
+      collectionView.setCollectionViewLayout(MainMoviesListCollectionFLowLayout(), animated: false)
+      
       if let presenter = presenter {
          let moviesObserver = presenter.getAllMovies()
-         moviesObserver.map({ $0.totalMoviesString }).bindTo(totalMoviesLabel.rx_text).addDisposableTo(disposeBag)
-         moviesObserver.map({ $0.movies }).bindTo(collectionView.rx_itemsWithCellIdentifier(MainMoviesListCell.identifier, cellType: MainMoviesListCell.self)) { (_, model, cell) in
-            cell.updateUI(model)
-         }.addDisposableTo(disposeBag)
+         moviesObserver
+            .map({ $0.totalMoviesString })
+            .observeOn(MainScheduler.instance)
+            .bindTo(totalMoviesLabel.rx_text)
+            .addDisposableTo(disposeBag)
+         moviesObserver
+            .map({ $0.movies })
+            .observeOn(MainScheduler.instance)
+            .bindTo(collectionView.rx_itemsWithCellIdentifier(MainMoviesListCell.identifier, cellType: MainMoviesListCell.self)) { (_, model, cell) in
+               cell.updateUI(model)
+            }
+            .addDisposableTo(disposeBag)
       }
    }
 

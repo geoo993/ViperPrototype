@@ -21,7 +21,7 @@ struct MainMoviesListInteractor {
    //MARK: Output
    
    func getAllMovies() -> Observable<[Movie]> {
-      return apiDataManager.getAllMovies()
+      return apiDataManager.discoverMovies()
    }
    
 }
