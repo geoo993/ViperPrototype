@@ -28,15 +28,9 @@ class MainMoviesListView: UIViewController {
 
       presenter?.handleDetailButtonTap(detailButton.rx_tap)
 
-      presenter?.getAllMovies().subscribeNext({ (movies) -> Void in
-         self.showAllMovies(movies)
+      presenter?.getAllMovies().subscribeNext({ (movieViewModel: MainMoviesListViewModel) -> Void in
+         self.totalMoviesLabel.text = movieViewModel.totalMoviesString
       }).addDisposableTo(disposeBag)
-   }
-   
-   //MARK: Private
-   
-   private func showAllMovies(movies: [Movie]) {
-      totalMoviesLabel.text = "# available titles: \(movies.count)"
    }
 
 }

@@ -24,6 +24,7 @@
 		20A680091C6F54C800898298 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A680071C6F54C800898298 /* RxCocoa.framework */; };
 		20A6800C1C6F57B500898298 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 20A680061C6F54C800898298 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20A6800D1C6F57B500898298 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 20A680071C6F54C800898298 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20A6800F1C6F8AE000898298 /* MainMoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A6800E1C6F8AE000898298 /* MainMoviesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,7 @@
 		20A680041C6F47A800898298 /* MovieDetailWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailWireframe.swift; sourceTree = "<group>"; };
 		20A680061C6F54C800898298 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		20A680071C6F54C800898298 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		20A6800E1C6F8AE000898298 /* MainMoviesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMoviesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				20A67FD11C6F3A6100898298 /* MainMoviesListView.swift */,
+				20A6800E1C6F8AE000898298 /* MainMoviesListViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				20A67FD21C6F3A6100898298 /* MainMoviesListView.swift in Sources */,
 				20A67FB51C6F382E00898298 /* AppDelegate.swift in Sources */,
 				20A680031C6F476300898298 /* MovieDetailView.swift in Sources */,
+				20A6800F1C6F8AE000898298 /* MainMoviesListViewModel.swift in Sources */,
 				20A680051C6F47A800898298 /* MovieDetailWireframe.swift in Sources */,
 				20A67FD81C6F3AC600898298 /* Movie.swift in Sources */,
 				20A67FDF1C6F3B2C00898298 /* MainMoviesListWireframe.swift in Sources */,

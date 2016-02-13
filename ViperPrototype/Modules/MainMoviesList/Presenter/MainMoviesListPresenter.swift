@@ -29,8 +29,21 @@ struct MainMoviesListPresenter {
    
    //MARK: Output
    
-   func getAllMovies() -> Observable<[Movie]> {
-      return interactor.getAllMovies()
+   func getAllMovies() -> Observable<MainMoviesListViewModel> {
+
+      return Observable.create { observer in
+         
+         self.interactor.getAllMovies().subscribeNext({ (movies) -> Void in
+            
+            let viewModel = MainMoviesListViewModel(movies: movies)
+            observer.onNext(viewModel)
+            
+         }).addDisposableTo(self.disposeBag)
+         
+         return AnonymousDisposable {}
+         
+      }
+
    }
    
 }

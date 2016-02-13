@@ -17,6 +17,7 @@ struct ApiDataManager {
          observer.onNext([ Movie(title: "Zoolander 2"), Movie(title: "Panda Kung Fu 3") ])
          return AnonymousDisposable {}
       }
+      
    }
 
 }
