@@ -10,4 +10,9 @@ import UIKit
 
 class MovieDetailView: UIViewController {
 
+   override func viewWillAppear(animated: Bool) {
+      super.viewWillAppear(animated)
+      navigationController?.navigationBarHidden = false
+   }
+   
 }

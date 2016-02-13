@@ -14,13 +14,18 @@ struct MainMoviesListWireframe {
       
       let mainMoviesListView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainMoviesListView") as! MainMoviesListView
 
-      let apiDataManager = ApiDataManager()
+      let apiDataManager = TmdbApiDataManager()
       
       let mainMoviesListInteractor = MainMoviesListInteractor(apiDataManager: apiDataManager)
-      mainMoviesListView.presenter = MainMoviesListPresenter(interactor: mainMoviesListInteractor)
+      mainMoviesListView.presenter = MainMoviesListPresenter(interactor: mainMoviesListInteractor, wireframe: MainMoviesListWireframe())
       
       let navigationController = UINavigationController(rootViewController: mainMoviesListView)
       window.rootViewController = navigationController
+
+   }
+   
+   func showDetail() {
+      MovieDetailWireframe.presentMovieDetailModule(UIApplication.sharedApplication().keyWindow!)
    }
    
 }

@@ -12,25 +12,30 @@ import RxSwift
 
 class MainMoviesListView: UIViewController {
 
-   @IBOutlet weak private var detailButton: UIButton!
    @IBOutlet weak private var totalMoviesLabel: UILabel!
+   @IBOutlet weak private var collectionView: UICollectionView!
    
    private let disposeBag = DisposeBag()
    
-   //TODO: inject this dependency
    var presenter: MainMoviesListPresenter?
    
    //MARK: UIViewController
    
    override func viewDidLoad() {
       super.viewDidLoad()
+
+      if let presenter = presenter {
+         let moviesObserver = presenter.getAllMovies()
+         moviesObserver.map({ $0.totalMoviesString }).bindTo(totalMoviesLabel.rx_text).addDisposableTo(disposeBag)
+         moviesObserver.map({ $0.movies }).bindTo(collectionView.rx_itemsWithCellIdentifier(MainMoviesListCell.identifier, cellType: MainMoviesListCell.self)) { (_, model, cell) in
+            cell.updateUI(model)
+         }.addDisposableTo(disposeBag)
+      }
+   }
+
+   override func viewWillAppear(animated: Bool) {
+      super.viewWillAppear(animated)
       navigationController?.navigationBarHidden = true
-
-      presenter?.handleDetailButtonTap(detailButton.rx_tap)
-
-      presenter?.getAllMovies().subscribeNext({ (movieViewModel: MainMoviesListViewModel) -> Void in
-         self.totalMoviesLabel.text = movieViewModel.totalMoviesString
-      }).addDisposableTo(disposeBag)
    }
 
 }

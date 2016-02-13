@@ -14,18 +14,14 @@ struct MainMoviesListPresenter {
    
    private let disposeBag = DisposeBag()
    private var interactor: MainMoviesListInteractor
+   private var wireframe: MainMoviesListWireframe
    
-   init(interactor: MainMoviesListInteractor) {
+   init(interactor: MainMoviesListInteractor, wireframe: MainMoviesListWireframe) {
       self.interactor = interactor
+      self.wireframe = wireframe
    }
    
    //MARK: Input
-   
-   func handleDetailButtonTap(event: ControlEvent<Void>) {
-      event.subscribeNext { _ -> Void in
-         print("TAPPED")
-      }.addDisposableTo(disposeBag)
-   }
    
    //MARK: Output
    

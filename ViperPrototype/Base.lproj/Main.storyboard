@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Movies List View-->
@@ -17,47 +18,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwB-eZ-Akn">
-                                <rect key="frame" x="277" y="328" width="46" height="36"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Detail">
-                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# available titles: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aF-eI-C6k">
-                                <rect key="frame" x="229.5" y="288" width="141" height="24"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Movies List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtg-tC-HYV">
-                                <rect key="frame" x="196" y="220.5" width="208" height="35.5"/>
+                                <rect key="frame" x="196" y="20.5" width="208" height="35.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# available titles: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aF-eI-C6k">
+                                <rect key="frame" x="229.5" y="63.5" width="141" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aSX-Nh-R95">
+                                <rect key="frame" x="29" y="119.5" width="551" height="480.5"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CDa-aT-Mso">
+                                    <size key="itemSize" width="551" height="130"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainMoviesListCell" id="OjG-tf-cAZ" customClass="MainMoviesListCell" customModule="ViperPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="551" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="551" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="oOW-sN-76f">
+                                                    <rect key="frame" x="16" y="47.5" width="519" height="35.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="30"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="oOW-sN-76f" firstAttribute="leading" secondItem="OjG-tf-cAZ" secondAttribute="leadingMargin" constant="8" id="Y9m-gq-vJB"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="oOW-sN-76f" secondAttribute="trailing" constant="8" id="hbL-g8-Y09"/>
+                                            <constraint firstItem="oOW-sN-76f" firstAttribute="centerY" secondItem="OjG-tf-cAZ" secondAttribute="centerY" id="tuO-sl-6Hk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="oOW-sN-76f" id="j6R-e7-Tat"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gwB-eZ-Akn" firstAttribute="top" secondItem="1aF-eI-C6k" secondAttribute="bottom" constant="16" id="IdD-8d-kqq"/>
-                            <constraint firstItem="1aF-eI-C6k" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RI6-nQ-TCb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aSX-Nh-R95" secondAttribute="bottom" id="0WO-KZ-x1N"/>
+                            <constraint firstItem="1aF-eI-C6k" firstAttribute="top" secondItem="dtg-tC-HYV" secondAttribute="bottom" constant="8" id="42q-tl-Puz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aSX-Nh-R95" secondAttribute="trailing" id="LWE-cc-SOg"/>
                             <constraint firstItem="1aF-eI-C6k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gsX-8b-HzH"/>
-                            <constraint firstItem="1aF-eI-C6k" firstAttribute="top" secondItem="dtg-tC-HYV" secondAttribute="bottom" constant="32" id="hGL-4f-9oW"/>
-                            <constraint firstItem="gwB-eZ-Akn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="veO-ZH-tXY"/>
+                            <constraint firstItem="dtg-tC-HYV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hxp-kR-1FV"/>
+                            <constraint firstItem="aSX-Nh-R95" firstAttribute="top" secondItem="1aF-eI-C6k" secondAttribute="bottom" constant="32" id="io2-I9-vLB"/>
+                            <constraint firstItem="aSX-Nh-R95" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="uNU-0e-YIG"/>
                             <constraint firstItem="dtg-tC-HYV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x5T-iY-Pp6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailButton" destination="gwB-eZ-Akn" id="4W7-w2-Pcq"/>
+                        <outlet property="collectionView" destination="aSX-Nh-R95" id="8ll-4Q-UK5"/>
                         <outlet property="totalMoviesLabel" destination="1aF-eI-C6k" id="1BE-3f-r0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="261" y="355"/>
         </scene>
         <!--Movie Detail View-->
         <scene sceneID="ctA-lZ-cZD">

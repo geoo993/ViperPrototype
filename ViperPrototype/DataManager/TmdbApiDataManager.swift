@@ -1,5 +1,5 @@
 //
-//  ApiDataManager.swift
+//  TmdbApiDataManager.swift
 //  ViperPrototype
 //
 //  Created by Adriano Goncalves on 13/02/2016.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-struct ApiDataManager {
+struct TmdbApiDataManager {
 
    func getAllMovies() -> Observable<[Movie]> {
       
