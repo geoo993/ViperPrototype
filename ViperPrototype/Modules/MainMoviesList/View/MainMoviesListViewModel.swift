@@ -10,9 +10,14 @@ import Foundation
 
 struct MainMoviesListViewItem {
    var movieTitle: String
+   var movieReleaseDate: String
 
    init(movie: Movie) {
       movieTitle = movie.title
+      
+      let formatter = NSDateFormatter()
+      formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+      movieReleaseDate = formatter.stringFromDate(movie.releaseDate)
    }
 }
 

@@ -30,19 +30,26 @@ struct TmdbApiDataManager {
    }
    
    func discoverMovies() -> MoviesResult {
+
       return Observable.create { observer in
-         self.apiService.discoverMovies().subscribeNext { (dictionary) -> Void in
+      
+         let discover = self.apiService.discoverMovies()
+         discover.subscribeNext { (dictionary) -> Void in
             
             if let jsonMovies = dictionary as? [NSObject: AnyObject] {
                var movies = [Movie]()
                for jsonMovie in jsonMovies["results"] as! [[NSObject: AnyObject]] {
-                  let movie = Movie(title: jsonMovie["original_title"] as! String)
-                  movies.append(movie)
+                  if let movie = Movie(jsonDictionary: jsonMovie) {
+                     movies.append(movie)
+                  }
                }
                observer.onNext(movies)
             }
             
             }.addDisposableTo(self.disposeBag)
+         discover.subscribeError({ (error) -> Void in
+            print(error)
+         }).addDisposableTo(self.disposeBag)
 
          return AnonymousDisposable {}
       }

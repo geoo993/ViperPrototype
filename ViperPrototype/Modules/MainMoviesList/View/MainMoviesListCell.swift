@@ -13,9 +13,11 @@ class MainMoviesListCell: UICollectionViewCell {
    static var identifier: String { return String(self) }
    
    @IBOutlet weak private var titleLabel: UILabel!
+   @IBOutlet weak private var releaseDateLabel: UILabel!
  
    func updateUI(model: MainMoviesListViewItem) {
       titleLabel.text = model.movieTitle
+      releaseDateLabel.text = model.movieReleaseDate
    }
    
 }
