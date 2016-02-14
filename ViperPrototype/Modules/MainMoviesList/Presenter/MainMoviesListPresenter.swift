@@ -13,8 +13,8 @@ import RxCocoa
 struct MainMoviesListPresenter {
    
    private let disposeBag = DisposeBag()
-   private var interactor: MainMoviesListInteractor
-   private var wireframe: MainMoviesListWireframe
+   private let interactor: MainMoviesListInteractor
+   private let wireframe: MainMoviesListWireframe
    
    init(interactor: MainMoviesListInteractor, wireframe: MainMoviesListWireframe) {
       self.interactor = interactor
@@ -25,7 +25,7 @@ struct MainMoviesListPresenter {
    
    //MARK: Output
    
-   func getAllMovies() -> Observable<MainMoviesListViewModel> {
+   func gotAllMovies() -> Observable<MainMoviesListViewModel> {
 
       return Observable.create { observer in
          

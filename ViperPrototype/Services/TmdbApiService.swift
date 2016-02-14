@@ -15,10 +15,17 @@ struct TmdbApiService {
    private let disposeBag = DisposeBag()
    
    func discoverMovies() -> Observable<AnyObject> {
-   
       let urlSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
       return urlSession.rx_JSON(NSURLRequest(URL: NSURL(string: "https://api.themoviedb.org/3/discover/movie?api_key=\(apiKey)")!))
-
+   }
+   
+   func downloadImage(name: String) {
+      //http://image.tmdb.org/t/p/w780/fnY5UDKdopZnGvzgbJIz9fAFImx.jpg
+   }
+   
+   func configurations() -> Observable<AnyObject> {
+      let urlSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+      return urlSession.rx_JSON(NSURLRequest(URL: NSURL(string: "https://api.themoviedb.org/3/configuration?api_key=\(apiKey)")!))
    }
    
 }

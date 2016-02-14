@@ -9,8 +9,6 @@
 import Foundation
 import RxSwift
 
-typealias MoviesResult = Observable<[Movie]>
-
 struct TmdbApiDataManager {
 
    private var apiService: TmdbApiService
@@ -20,16 +18,7 @@ struct TmdbApiDataManager {
       self.apiService = apiService
    }
    
-   func getAllMovies() -> MoviesResult {
-      
-      return Observable.create { observer in
-         observer.onNext([ Movie(title: "Zoolander 2"), Movie(title: "Panda Kung Fu 3") ])
-         return AnonymousDisposable {}
-      }
-      
-   }
-   
-   func discoverMovies() -> MoviesResult {
+   func discoverMovies() -> Observable<[Movie]> {
 
       return Observable.create { observer in
       
@@ -52,7 +41,29 @@ struct TmdbApiDataManager {
          }).addDisposableTo(self.disposeBag)
 
          return AnonymousDisposable {}
+         
       }
+      
+   }
+   
+   func configurations() -> Observable<TmdbConfiguration> {
+   
+      return Observable.create { observer in
+         
+         let configurationObservable = self.apiService.configurations()
+         configurationObservable.subscribeNext { (configuration) -> Void in
+
+            if let tmdbConfiguration = TmdbConfiguration(jsonDictionary: configuration as! [NSObject: AnyObject]) {
+               AppConfiguration.sharedInstance.setTmdbConfiguration(tmdbConfiguration)
+               observer.onNext(tmdbConfiguration)
+            }
+            
+         }.addDisposableTo(self.disposeBag)
+         
+         return AnonymousDisposable {}
+   
+      }
+
    }
 
 }

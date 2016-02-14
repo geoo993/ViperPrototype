@@ -6,6 +6,35 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Configurations View-->
+        <scene sceneID="WlP-PA-xz4">
+            <objects>
+                <viewController storyboardIdentifier="ConfigurationsViewController" id="DcC-hn-4Du" customClass="ConfigurationsView" customModule="ViperPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k9a-bM-G6B"/>
+                        <viewControllerLayoutGuide type="bottom" id="yP2-bP-kmZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wFa-Bs-7lA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="07j-Fr-8fQ">
+                                <rect key="frame" x="281.5" y="281.5" width="37" height="37"/>
+                                <animations/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="07j-Fr-8fQ" firstAttribute="centerX" secondItem="wFa-Bs-7lA" secondAttribute="centerX" id="GuQ-Dj-hHA"/>
+                            <constraint firstItem="07j-Fr-8fQ" firstAttribute="centerY" secondItem="wFa-Bs-7lA" secondAttribute="centerY" id="aZh-OU-2dz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pxm-Wh-8qE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-940" y="286"/>
+        </scene>
         <!--Main Movies List View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -59,7 +88,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESJ-sb-JYb">
                                                     <rect key="frame" x="16" y="101.5" width="528" height="20.5"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

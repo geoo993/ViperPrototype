@@ -19,9 +19,12 @@ struct MainMoviesListWireframe {
       
       let mainMoviesListInteractor = MainMoviesListInteractor(apiDataManager: apiDataManager)
       mainMoviesListView.presenter = MainMoviesListPresenter(interactor: mainMoviesListInteractor, wireframe: MainMoviesListWireframe())
-      
-      let navigationController = UINavigationController(rootViewController: mainMoviesListView)
-      window.rootViewController = navigationController
+
+      if let navigationController = window.rootViewController as? UINavigationController {
+         dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            navigationController.pushViewController(mainMoviesListView, animated: true)
+         })
+      }
 
    }
    

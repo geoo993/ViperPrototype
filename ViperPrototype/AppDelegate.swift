@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
       self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
       if let window = window {
-         MainMoviesListWireframe.presentMainMoviesListModule(window)
+         window.rootViewController = UINavigationController(navigationBarClass: nil, toolbarClass: nil)
+         ConfigurationsWireframe.presentConfigurationsModule(window)
          window.makeKeyAndVisible()
       }
       return true

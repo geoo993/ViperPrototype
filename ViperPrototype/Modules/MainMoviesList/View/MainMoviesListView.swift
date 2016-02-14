@@ -40,7 +40,7 @@ class MainMoviesListView: UIViewController {
       collectionView.setCollectionViewLayout(MainMoviesListCollectionFLowLayout(), animated: false)
       
       if let presenter = presenter {
-         let moviesObserver = presenter.getAllMovies()
+         let moviesObserver = presenter.gotAllMovies()
          moviesObserver
             .map({ $0.totalMoviesString })
             .observeOn(MainScheduler.instance)
