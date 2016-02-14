@@ -11,13 +11,16 @@ import Foundation
 struct TmdbConfiguration {
    
    let imagesBaseUrl: String
+   let posterSizes: [String]
  
    init?(jsonDictionary: [NSObject: AnyObject]) {
       
       guard let images = jsonDictionary["images"] as? [NSObject: AnyObject],
-         baseUrl = images["base_url"] as? String else { return nil }
+         baseUrl = images["base_url"] as? String,
+         posterSizes = images["poster_sizes"] as? [String] else { return nil }
 
       self.imagesBaseUrl = baseUrl
+      self.posterSizes = posterSizes
 
    }
    

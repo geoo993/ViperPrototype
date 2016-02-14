@@ -30,6 +30,7 @@ class ConfigurationsView: UIViewController {
 
    private func showError() {
       let alertController = UIAlertController(title: "Configuration error", message: "Unable to retrieve configurations", preferredStyle: UIAlertControllerStyle.Alert)
+      alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
       presentViewController(alertController, animated: true, completion: nil)
    }
 }

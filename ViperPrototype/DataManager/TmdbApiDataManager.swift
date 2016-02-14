@@ -28,7 +28,10 @@ struct TmdbApiDataManager {
             if let jsonMovies = dictionary as? [NSObject: AnyObject] {
                var movies = [Movie]()
                for jsonMovie in jsonMovies["results"] as! [[NSObject: AnyObject]] {
-                  if let movie = Movie(jsonDictionary: jsonMovie) {
+                  var movie = Movie(jsonDictionary: jsonMovie)
+                  //TODO: dont use Singleton
+                  movie?.updatePosterPath(AppConfiguration.sharedInstance.tmdbConfiguration!.imagesBaseUrl + AppConfiguration.sharedInstance.tmdbConfiguration!.posterSizes[AppConfiguration.sharedInstance.tmdbConfiguration!.posterSizes.count-2])
+                  if let movie = movie {
                      movies.append(movie)
                   }
                }

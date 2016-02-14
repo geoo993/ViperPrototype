@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DcC-hn-4Du">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -79,6 +79,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sbf-11-e0F">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="129.5"/>
+                                                    <animations/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="oOW-sN-76f">
                                                     <rect key="frame" x="16" y="47.5" width="528" height="35.5"/>
                                                     <animations/>
@@ -99,14 +103,19 @@
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="ESJ-sb-JYb" secondAttribute="bottom" constant="8" id="Da4-uV-35W"/>
+                                            <constraint firstAttribute="bottom" secondItem="Sbf-11-e0F" secondAttribute="bottom" id="KlN-zd-0g5"/>
+                                            <constraint firstItem="Sbf-11-e0F" firstAttribute="top" secondItem="OjG-tf-cAZ" secondAttribute="top" id="Tp6-D8-0sc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sbf-11-e0F" secondAttribute="trailing" id="V4J-Uv-HkQ"/>
                                             <constraint firstItem="oOW-sN-76f" firstAttribute="leading" secondItem="OjG-tf-cAZ" secondAttribute="leadingMargin" constant="8" id="Y9m-gq-vJB"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="oOW-sN-76f" secondAttribute="trailing" constant="8" id="hbL-g8-Y09"/>
+                                            <constraint firstItem="Sbf-11-e0F" firstAttribute="leading" secondItem="OjG-tf-cAZ" secondAttribute="leading" id="jUc-xb-ywP"/>
                                             <constraint firstItem="ESJ-sb-JYb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oOW-sN-76f" secondAttribute="bottom" constant="8" id="jap-6z-znq"/>
                                             <constraint firstItem="oOW-sN-76f" firstAttribute="centerY" secondItem="OjG-tf-cAZ" secondAttribute="centerY" id="tuO-sl-6Hk"/>
                                             <constraint firstItem="ESJ-sb-JYb" firstAttribute="trailing" secondItem="oOW-sN-76f" secondAttribute="trailing" id="uyG-YW-WCy"/>
                                             <constraint firstItem="ESJ-sb-JYb" firstAttribute="leading" secondItem="oOW-sN-76f" secondAttribute="leading" id="z2U-oH-18r"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="posterImage" destination="Sbf-11-e0F" id="JY7-vU-nev"/>
                                             <outlet property="releaseDateLabel" destination="ESJ-sb-JYb" id="cjp-OO-Uyb"/>
                                             <outlet property="titleLabel" destination="oOW-sN-76f" id="j6R-e7-Tat"/>
                                         </connections>
@@ -134,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="355"/>
+            <point key="canvasLocation" x="-227" y="286"/>
         </scene>
         <!--Movie Detail View-->
         <scene sceneID="ctA-lZ-cZD">
@@ -166,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9S-Og-Jh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="388"/>
+            <point key="canvasLocation" x="472" y="286"/>
         </scene>
     </scenes>
 </document>
