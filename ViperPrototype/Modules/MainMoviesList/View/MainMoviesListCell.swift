@@ -15,17 +15,18 @@ class MainMoviesListCell: UICollectionViewCell {
    
    static var identifier: String { return String(self) }
    
-   @IBOutlet weak private var posterImage: UIImageView!
+   @IBOutlet weak private var backgroundImage: UIImageView!
    @IBOutlet weak private var titleLabel: UILabel!
    @IBOutlet weak private var releaseDateLabel: UILabel!
  
    func updateUI(var model: MainMoviesListViewItem) {
+      backgroundImage.image = nil
       titleLabel.text = model.movieTitle
       releaseDateLabel.text = model.movieReleaseDate
-      model.downloadPosterImage()
+      model.downloadBackdropImage()
          .subscribeNext { (image) -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-               self.posterImage.image = image
+               self.backgroundImage.image = image
             })
          }.addDisposableTo(disposeBag)
    }

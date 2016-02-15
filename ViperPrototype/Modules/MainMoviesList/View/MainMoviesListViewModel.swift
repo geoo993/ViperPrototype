@@ -12,6 +12,7 @@ import RxSwift
 struct MainMoviesListViewItem {
    
    private var posterImage: UIImage?
+   private var backdropImage: UIImage?
    private var movie: Movie
    
    var movieTitle: String
@@ -64,14 +65,61 @@ struct MainMoviesListViewItem {
             })
             task.resume()
 
-            return AnonymousDisposable {}
+            return AnonymousDisposable {
+               task.cancel()
+            }
             
          }
 
       }
       
    }
-   
+
+   mutating func downloadBackdropImage() -> Observable<UIImage> {
+      
+      if let backdropImage = backdropImage {
+         
+         return Observable.create { observer in
+            observer.onNext(backdropImage)
+            return AnonymousDisposable {}
+         }
+         
+      } else {
+         
+         return Observable.create { observer in
+            
+            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+            let task = session.downloadTaskWithRequest(NSURLRequest(URL: NSURL(string: self.movie.backdropPath)!), completionHandler: { (location, _, error) -> Void in
+               
+               if error != nil {
+                  observer.onError(error!)
+               } else {
+                  print(location!.absoluteString)
+                  if let location = location,
+                     imageData = NSData(contentsOfFile: location.relativePath!),
+                     image = UIImage(data: imageData) {
+                        
+                        self.posterImage = image
+                        observer.onNext(image)
+                        
+                  } else {
+                     observer.onError(NSError(domain: "ViperPrototype", code: 1001, userInfo: nil))
+                  }
+               }
+               
+            })
+            task.resume()
+            
+            return AnonymousDisposable {
+               task.cancel()
+            }
+            
+         }
+         
+      }
+      
+   }
+
 }
 
 struct MainMoviesListViewModel {

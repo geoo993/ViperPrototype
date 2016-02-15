@@ -13,12 +13,13 @@ import RxSwift
 class MainMoviesListCollectionFLowLayout: UICollectionViewFlowLayout {
 
    override var itemSize: CGSize {
-      get {
-         return CGSize(width: collectionView!.contentSize.width, height: 130)
-      }
-      set {
-      
-      }
+      get { return CGSize(width: collectionView!.contentSize.width, height: 200) }
+      set { }
+   }
+   
+   override var minimumLineSpacing: CGFloat {
+      get { return 0 }
+      set { }
    }
    
 }
@@ -40,7 +41,7 @@ class MainMoviesListView: UIViewController {
       collectionView.setCollectionViewLayout(MainMoviesListCollectionFLowLayout(), animated: false)
       
       if let presenter = presenter {
-         let moviesObserver = presenter.gotAllMovies()
+         let moviesObserver = presenter.gotAllMovies().shareReplay(1)
          moviesObserver
             .map({ $0.totalMoviesString })
             .observeOn(MainScheduler.instance)

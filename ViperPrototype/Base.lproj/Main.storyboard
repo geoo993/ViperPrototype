@@ -84,16 +84,17 @@
                                                     <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="oOW-sN-76f">
-                                                    <rect key="frame" x="16" y="47.5" width="528" height="35.5"/>
+                                                    <rect key="frame" x="16" y="44" width="528" height="43"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="36"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESJ-sb-JYb">
-                                                    <rect key="frame" x="16" y="101.5" width="528" height="20.5"/>
+                                                    <rect key="frame" x="16" y="98" width="528" height="24"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -115,7 +116,7 @@
                                             <constraint firstItem="ESJ-sb-JYb" firstAttribute="leading" secondItem="oOW-sN-76f" secondAttribute="leading" id="z2U-oH-18r"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="posterImage" destination="Sbf-11-e0F" id="JY7-vU-nev"/>
+                                            <outlet property="backgroundImage" destination="Sbf-11-e0F" id="cWS-w0-ZTI"/>
                                             <outlet property="releaseDateLabel" destination="ESJ-sb-JYb" id="cjp-OO-Uyb"/>
                                             <outlet property="titleLabel" destination="oOW-sN-76f" id="j6R-e7-Tat"/>
                                         </connections>
