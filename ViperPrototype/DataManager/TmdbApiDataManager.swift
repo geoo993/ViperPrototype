@@ -12,10 +12,12 @@ import RxSwift
 struct TmdbApiDataManager {
 
    private var apiService: TmdbApiService
+   private var appConfiguration: AppConfiguration
    private let disposeBag = DisposeBag()
 
-   init(apiService: TmdbApiService) {
+   init(apiService: TmdbApiService, appConfiguration: AppConfiguration = AppConfiguration.sharedInstance) {
       self.apiService = apiService
+      self.appConfiguration = appConfiguration
    }
    
    func discoverMovies() -> Observable<[Movie]> {
@@ -23,6 +25,7 @@ struct TmdbApiDataManager {
       return Observable.create { observer in
       
          let discover = self.apiService.discoverMovies()
+         
          discover.subscribeNext { (dictionary) -> Void in
             
             if let jsonMovies = dictionary as? [NSObject: AnyObject] {
@@ -31,9 +34,8 @@ struct TmdbApiDataManager {
                   
                   var movie = Movie(jsonDictionary: jsonMovie)
 
-                  //TODO: dont use Singleton
-                  movie?.updatePosterPath(AppConfiguration.sharedInstance.posterBasePath)
-                  movie?.updateBackdropPath(AppConfiguration.sharedInstance.backdropBasePath)
+                  movie?.updatePosterPath(self.appConfiguration.posterBasePath)
+                  movie?.updateBackdropPath(self.appConfiguration.backdropBasePath)
                   
                   if let movie = movie {
                      movies.append(movie)
@@ -43,7 +45,8 @@ struct TmdbApiDataManager {
                observer.onNext(movies)
             }
             
-            }.addDisposableTo(self.disposeBag)
+         }.addDisposableTo(self.disposeBag)
+         
          discover.subscribeError({ (error) -> Void in
             print(error)
          }).addDisposableTo(self.disposeBag)

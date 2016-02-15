@@ -32,92 +32,97 @@ struct MainMoviesListViewItem {
    
    mutating func downloadPosterImage() -> Observable<UIImage> {
    
-      if let posterImage = posterImage {
-         
-         return Observable.create { observer in
-            observer.onNext(posterImage)
-            return AnonymousDisposable {}
-         }
-         
-      } else {
-      
-         return Observable.create { observer in
+      return Observable.create { observer in
 
-            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-            let task = session.downloadTaskWithRequest(NSURLRequest(URL: NSURL(string: self.movie.posterPath)!), completionHandler: { (location, _, error) -> Void in
+         var task: NSURLSessionDownloadTask?
+         
+         if let posterImage = self.posterImage {
+            observer.onNext(posterImage)
+         } else {
+            
+            task = self.downloadImage(self.movie.posterPath) { (error, image) -> Void in
                
                if error != nil {
                   observer.onError(error!)
                } else {
-                  print(location!.absoluteString)
-                  if let location = location,
-                     imageData = NSData(contentsOfFile: location.relativePath!),
-                     image = UIImage(data: imageData) {
-                        
-                     self.posterImage = image
-                     observer.onNext(image)
-                        
-                  } else {
-                     observer.onError(NSError(domain: "ViperPrototype", code: 1000, userInfo: nil))
+                  self.posterImage = image
+                  if let aImage = image {
+                     observer.onNext(aImage)
                   }
                }
                
-            })
-            task.resume()
-
-            return AnonymousDisposable {
-               task.cancel()
             }
             
          }
+         
+         return AnonymousDisposable {
+            task?.cancel()
+         }
 
+         
       }
       
    }
 
    mutating func downloadBackdropImage() -> Observable<UIImage> {
       
-      if let backdropImage = backdropImage {
+      return Observable.create { observer in
          
-         return Observable.create { observer in
+         var task: NSURLSessionDownloadTask?
+         
+         if let backdropImage = self.backdropImage {
             observer.onNext(backdropImage)
-            return AnonymousDisposable {}
-         }
-         
-      } else {
-         
-         return Observable.create { observer in
+         } else {
             
-            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-            let task = session.downloadTaskWithRequest(NSURLRequest(URL: NSURL(string: self.movie.backdropPath)!), completionHandler: { (location, _, error) -> Void in
+            task = self.downloadImage(self.movie.backdropPath) { (error, image) -> Void in
                
                if error != nil {
                   observer.onError(error!)
                } else {
-                  print(location!.absoluteString)
-                  if let location = location,
-                     imageData = NSData(contentsOfFile: location.relativePath!),
-                     image = UIImage(data: imageData) {
-                        
-                        self.posterImage = image
-                        observer.onNext(image)
-                        
-                  } else {
-                     observer.onError(NSError(domain: "ViperPrototype", code: 1001, userInfo: nil))
+                  self.backdropImage = image
+                  if let aImage = image {
+                     observer.onNext(aImage)
                   }
                }
                
-            })
-            task.resume()
-            
-            return AnonymousDisposable {
-               task.cancel()
             }
             
          }
          
+         return AnonymousDisposable {
+            task?.cancel()
+         }
+         
       }
       
+   }
+   
+   private func downloadImage(path: String, onCompletion: (error: ErrorType?, image: UIImage?) -> Void) -> NSURLSessionDownloadTask {
+   
+      let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+      let task = session.downloadTaskWithRequest(NSURLRequest(URL: NSURL(string: path)!), completionHandler: { (location, _, error) -> Void in
+         
+         if error != nil {
+            onCompletion(error: error, image: nil)
+         } else {
+
+            if let location = location,
+               imageData = NSData(contentsOfFile: location.relativePath!),
+               image = UIImage(data: imageData) {
+                  
+                  onCompletion(error: nil, image: image)
+                  
+            } else {
+               onCompletion(error: NSError(domain: "ViperPrototype", code: 1000, userInfo: nil), image: nil)
+            }
+            
+         }
+         
+      })
+      task.resume()
+      
+      return task
+
    }
 
 }
