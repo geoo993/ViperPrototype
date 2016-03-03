@@ -19,16 +19,13 @@ class MainMoviesListCell: UICollectionViewCell {
    @IBOutlet weak private var titleLabel: UILabel!
    @IBOutlet weak private var releaseDateLabel: UILabel!
  
-   func updateUI(var model: MainMoviesListViewItem) {
+   func updateUI(model: MainMoviesListViewItem) {
       backgroundImage.image = nil
       titleLabel.text = model.movieTitle
       releaseDateLabel.text = model.movieReleaseDate
-      model.downloadBackdropImage()
-         .subscribeNext { (image) -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-               self.backgroundImage.image = image
-            })
-         }.addDisposableTo(disposeBag)
+      model.backdropImage?.asDriver(onErrorJustReturn: UIImage()).driveNext({ (image) -> Void in
+         self.backgroundImage.image = image
+      }).addDisposableTo(disposeBag)
    }
    
 }

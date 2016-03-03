@@ -50,7 +50,8 @@ class MainMoviesListView: UIViewController {
          moviesObserver
             .map({ $0.movies })
             .observeOn(MainScheduler.instance)
-            .bindTo(collectionView.rx_itemsWithCellIdentifier(MainMoviesListCell.identifier, cellType: MainMoviesListCell.self)) { (_, model, cell) in
+            .bindTo(collectionView.rx_itemsWithCellIdentifier(MainMoviesListCell.identifier, cellType: MainMoviesListCell.self)) { (_, var model, cell) in
+               model.backdropImage = ImagesService.sharedInstance.downloadImage(model.movieBackdropUrl)
                cell.updateUI(model)
             }
             .addDisposableTo(disposeBag)

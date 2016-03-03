@@ -6,14 +6,14 @@
 //  Copyright © 2016 Adriano Goncalves. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 
 struct MainMoviesListInteractor {
 
    private let apiDataManager: TmdbApiDataManager
    private let disposeBag = DisposeBag()
-   
+
    init(apiDataManager: TmdbApiDataManager) {
       self.apiDataManager = apiDataManager
    }
