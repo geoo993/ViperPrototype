@@ -22,11 +22,11 @@ struct ConfigurationsInteractor {
       
       return Observable.create { observer in
       
-         self.dataManager.configurations().subscribeNext { (configuration) -> Void in
+        self.dataManager.configurations().subscribe(onNext: { (configuration) -> Void in
             observer.onNext(configuration.imagesBaseUrl != "")
-         }.addDisposableTo(self.disposeBag)
+         }).addDisposableTo(self.disposeBag)
 
-         return AnonymousDisposable {}
+        return Disposables.create { }
          
       }
       

@@ -26,7 +26,7 @@ struct TmdbApiDataManager {
       
          let discover = self.apiService.discoverMovies()
          
-         discover.subscribeNext { (dictionary) -> Void in
+        discover.subscribe(onNext: { (dictionary) -> Void in
             
             if let jsonMovies = dictionary as? [AnyHashable: Any] {
                var movies = [Movie]()
@@ -45,13 +45,13 @@ struct TmdbApiDataManager {
                observer.onNext(movies)
             }
             
-         }.addDisposableTo(self.disposeBag)
+        }).addDisposableTo(self.disposeBag)
          
-         discover.subscribeError({ (error) -> Void in
+        discover.subscribe(onError: { (error) -> Void in
             print(error)
          }).addDisposableTo(self.disposeBag)
 
-         return AnonymousDisposable {}
+         return Disposables.create {}
          
       }
       
@@ -62,16 +62,16 @@ struct TmdbApiDataManager {
       return Observable.create { observer in
          
          let configurationObservable = self.apiService.configurations()
-         configurationObservable.subscribeNext { (configuration) -> Void in
+        configurationObservable.subscribe(onNext: { (configuration) -> Void in
 
             if let tmdbConfiguration = TmdbConfiguration(jsonDictionary: configuration as! [AnyHashable: Any]) {
                AppConfiguration.sharedInstance.setTmdbConfiguration(tmdbConfiguration)
                observer.onNext(tmdbConfiguration)
             }
             
-         }.addDisposableTo(self.disposeBag)
+         }).addDisposableTo(self.disposeBag)
          
-         return AnonymousDisposable {}
+         return Disposables.create {}
    
       }
 

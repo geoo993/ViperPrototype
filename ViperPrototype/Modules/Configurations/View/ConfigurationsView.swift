@@ -19,7 +19,7 @@ class ConfigurationsView: UIViewController {
       super.viewDidLoad()
       
       if let presenter = presenter {
-         presenter.gotConfigurations().subscribeNext({ (result) -> Void in
+        presenter.gotConfigurations().subscribe(onNext: { (result) -> Void in
             if !result {
                self.showError()
             }

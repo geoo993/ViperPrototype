@@ -20,12 +20,14 @@ struct TmdbApiService {
       self.urlSession = urlSession
    }
    
-   func discoverMovies() -> Observable<AnyObject> {
-      return urlSession.rx_JSON(NSURLRequest(URL: NSURL(string: "https://api.themoviedb.org/3/discover/movie?api_key=\(apiKey)")!))
+   func discoverMovies() -> Observable<Any> {
+        let path = "https://api.themoviedb.org/3/discover/movie?api_key=\(apiKey)"
+        let url = URL(string: path )!
+        return urlSession.rx.json(url: url)
    }
    
-   func configurations() -> Observable<AnyObject> {
-      return urlSession.rx_JSON(NSURLRequest(URL: NSURL(string: "https://api.themoviedb.org/3/configuration?api_key=\(apiKey)")!))
+   func configurations() -> Observable<Any> {
+    return urlSession.rx.json(url: URL(string: "https://api.themoviedb.org/3/configuration?api_key=\(apiKey)")!)
    }
    
 }

@@ -26,7 +26,7 @@ struct ConfigurationsPresenter {
          
          self.interactor.getConfigurations()
             .throttle(1, scheduler: MainScheduler.instance)
-            .subscribeNext { (result) -> Void in
+            .subscribe(onNext: { (result) -> Void in
             
                if result {
                   self.wireframe.showMainMoviesList()
@@ -35,10 +35,10 @@ struct ConfigurationsPresenter {
                   observer.onNext(false)
                }
                
-            }.addDisposableTo(self.disposeBag)
+            }).addDisposableTo(self.disposeBag)
          
-         return AnonymousDisposable {}
-         
+        return Disposables.create { }
+        
       }
       
    }

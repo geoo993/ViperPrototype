@@ -24,12 +24,12 @@ class ImagesService {
       
       return Observable.deferred({ () -> Observable<UIImage> in
          
-         if let image = self.imagesCache.objectForKey(imageUrl) as? UIImage {
+         if let image = self.imagesCache.object(forKey: imageUrl as AnyObject) as? UIImage {
             return Observable.just(image)
          } else {
 
             let result: Observable<UIImage> = self.urlSession
-               .rx_data(NSURLRequest(URL: NSURL(string: imageUrl)!))
+               .rx.data(request: URLRequest(url: URL(string: imageUrl)!))
                .flatMap({ (imageData) -> Observable<UIImage> in
                   guard let image = UIImage(data: imageData) else {
                      return Observable.just(UIImage())
@@ -39,8 +39,8 @@ class ImagesService {
                   
                })
             
-            return result.doOn(onNext: { (image) -> Void in
-               self.imagesCache.setObject(image, forKey: imageUrl)
+            return result.do(onNext: { (image) -> Void in
+               self.imagesCache.setObject(image, forKey: imageUrl as AnyObject)
                })
 
          }

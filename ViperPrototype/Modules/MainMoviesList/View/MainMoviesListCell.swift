@@ -23,7 +23,7 @@ class MainMoviesListCell: UICollectionViewCell {
       backgroundImage.image = nil
       titleLabel.text = model.movieTitle
       releaseDateLabel.text = model.movieReleaseDate
-      model.backdropImage?.asDriver(onErrorJustReturn: UIImage()).driveNext({ (image) -> Void in
+    model.backdropImage?.asDriver(onErrorJustReturn: UIImage()).drive(onNext: { (image) -> Void in
          self.backgroundImage.image = image
       }).addDisposableTo(disposeBag)
    }

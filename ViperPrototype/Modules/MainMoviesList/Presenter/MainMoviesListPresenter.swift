@@ -29,14 +29,14 @@ struct MainMoviesListPresenter {
 
       return Observable.create { observer in
          
-         self.interactor.getAllMovies().subscribeNext({ (movies) -> Void in
+        self.interactor.getAllMovies().subscribe(onNext: { (movies) -> Void in
             
             let viewModel = MainMoviesListViewModel(movies: movies)
             observer.onNext(viewModel)
             
          }).addDisposableTo(self.disposeBag)
          
-         return AnonymousDisposable {}
+         return Disposables.create {}
          
       }
 
