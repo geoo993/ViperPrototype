@@ -11,9 +11,9 @@ import RxSwift
 
 struct TmdbApiDataManager {
 
-   private var apiService: TmdbApiService
-   private var appConfiguration: AppConfiguration
-   private let disposeBag = DisposeBag()
+   fileprivate var apiService: TmdbApiService
+   fileprivate var appConfiguration: AppConfiguration
+   fileprivate let disposeBag = DisposeBag()
 
    init(apiService: TmdbApiService, appConfiguration: AppConfiguration = AppConfiguration.sharedInstance) {
       self.apiService = apiService
@@ -28,9 +28,9 @@ struct TmdbApiDataManager {
          
          discover.subscribeNext { (dictionary) -> Void in
             
-            if let jsonMovies = dictionary as? [NSObject: AnyObject] {
+            if let jsonMovies = dictionary as? [AnyHashable: Any] {
                var movies = [Movie]()
-               for jsonMovie in jsonMovies["results"] as! [[NSObject: AnyObject]] {
+               for jsonMovie in jsonMovies["results"] as! [[AnyHashable: Any]] {
                   
                   var movie = Movie(jsonDictionary: jsonMovie)
 
@@ -64,7 +64,7 @@ struct TmdbApiDataManager {
          let configurationObservable = self.apiService.configurations()
          configurationObservable.subscribeNext { (configuration) -> Void in
 
-            if let tmdbConfiguration = TmdbConfiguration(jsonDictionary: configuration as! [NSObject: AnyObject]) {
+            if let tmdbConfiguration = TmdbConfiguration(jsonDictionary: configuration as! [AnyHashable: Any]) {
                AppConfiguration.sharedInstance.setTmdbConfiguration(tmdbConfiguration)
                observer.onNext(tmdbConfiguration)
             }

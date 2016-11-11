@@ -14,12 +14,12 @@ struct TmdbConfiguration {
    let posterSizes: [String]
    let backdropSizes: [String]
  
-   init?(jsonDictionary: [NSObject: AnyObject]) {
+   init?(jsonDictionary: [AnyHashable: Any]) {
       
-      guard let images = jsonDictionary["images"] as? [NSObject: AnyObject],
-         baseUrl = images["base_url"] as? String,
-         posterSizes = images["poster_sizes"] as? [String],
-         backdropSizes = images["backdrop_sizes"] as? [String] else { return nil }
+      guard let images = jsonDictionary["images"] as? [AnyHashable: Any],
+         let baseUrl = images["base_url"] as? String,
+         let posterSizes = images["poster_sizes"] as? [String],
+         let backdropSizes = images["backdrop_sizes"] as? [String] else { return nil }
 
       self.imagesBaseUrl = baseUrl
       self.posterSizes = posterSizes

@@ -11,13 +11,13 @@ import RxSwift
 
 struct MainMoviesListViewItem {
    
-   private var movie: Movie
+   fileprivate var movie: Movie
    
    var backdropImage: Observable<UIImage>?
 
-   private (set) var movieTitle: String
-   private (set) var movieReleaseDate: String
-   private (set) var movieBackdropUrl: String
+   fileprivate (set) var movieTitle: String
+   fileprivate (set) var movieReleaseDate: String
+   fileprivate (set) var movieBackdropUrl: String
 
    init(movie: Movie) {
    
@@ -26,9 +26,9 @@ struct MainMoviesListViewItem {
       movieTitle = movie.title
       movieBackdropUrl = movie.backdropPath
       
-      let formatter = NSDateFormatter()
-      formatter.dateStyle = NSDateFormatterStyle.MediumStyle
-      movieReleaseDate = formatter.stringFromDate(movie.releaseDate)
+      let formatter = DateFormatter()
+      formatter.dateStyle = DateFormatter.Style.medium
+      movieReleaseDate = formatter.string(from: movie.releaseDate as Date)
    
    }
 

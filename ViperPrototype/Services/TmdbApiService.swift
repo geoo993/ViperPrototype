@@ -11,12 +11,12 @@ import RxSwift
 
 struct TmdbApiService {
    
-   private let apiKey = "dac7d87953c93d4b13c689999e59fd8e"
-   private let disposeBag = DisposeBag()
+   fileprivate let apiKey = "dac7d87953c93d4b13c689999e59fd8e"
+   fileprivate let disposeBag = DisposeBag()
 
-   private let urlSession: NSURLSession
+   fileprivate let urlSession: URLSession
 
-   init(urlSession: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())) {
+   init(urlSession: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
       self.urlSession = urlSession
    }
    

@@ -12,9 +12,9 @@ import RxCocoa
 
 struct MainMoviesListPresenter {
    
-   private let disposeBag = DisposeBag()
-   private let interactor: MainMoviesListInteractor
-   private let wireframe: MainMoviesListWireframe
+   fileprivate let disposeBag = DisposeBag()
+   fileprivate let interactor: MainMoviesListInteractor
+   fileprivate let wireframe: MainMoviesListWireframe
    
    init(interactor: MainMoviesListInteractor, wireframe: MainMoviesListWireframe) {
       self.interactor = interactor

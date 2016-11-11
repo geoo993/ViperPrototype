@@ -10,9 +10,9 @@ import UIKit
 
 struct MainMoviesListWireframe {
 
-   static func presentMainMoviesListModule(window: UIWindow) {
+   static func presentMainMoviesListModule(_ window: UIWindow) {
       
-      let mainMoviesListView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainMoviesListView") as! MainMoviesListView
+      let mainMoviesListView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainMoviesListView") as! MainMoviesListView
 
       let apiService = TmdbApiService()
       let apiDataManager = TmdbApiDataManager(apiService: apiService)
@@ -21,7 +21,7 @@ struct MainMoviesListWireframe {
       mainMoviesListView.presenter = MainMoviesListPresenter(interactor: mainMoviesListInteractor, wireframe: MainMoviesListWireframe())
 
       if let navigationController = window.rootViewController as? UINavigationController {
-         dispatch_async(dispatch_get_main_queue(), { () -> Void in
+         DispatchQueue.main.async(execute: { () -> Void in
             navigationController.pushViewController(mainMoviesListView, animated: true)
          })
       }
@@ -29,7 +29,7 @@ struct MainMoviesListWireframe {
    }
    
    func showDetail() {
-      MovieDetailWireframe.presentMovieDetailModule(UIApplication.sharedApplication().keyWindow!)
+      MovieDetailWireframe.presentMovieDetailModule(UIApplication.shared.keyWindow!)
    }
    
 }

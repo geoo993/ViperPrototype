@@ -26,10 +26,10 @@ class MainMoviesListCollectionFLowLayout: UICollectionViewFlowLayout {
 
 class MainMoviesListView: UIViewController {
 
-   @IBOutlet weak private var totalMoviesLabel: UILabel!
-   @IBOutlet weak private var collectionView: UICollectionView!
+   @IBOutlet weak fileprivate var totalMoviesLabel: UILabel!
+   @IBOutlet weak fileprivate var collectionView: UICollectionView!
    
-   private let disposeBag = DisposeBag()
+   fileprivate let disposeBag = DisposeBag()
    
    var presenter: MainMoviesListPresenter?
    
@@ -50,7 +50,7 @@ class MainMoviesListView: UIViewController {
          moviesObserver
             .map({ $0.movies })
             .observeOn(MainScheduler.instance)
-            .bindTo(collectionView.rx_itemsWithCellIdentifier(MainMoviesListCell.identifier, cellType: MainMoviesListCell.self)) { (_, var model, cell) in
+            .bindTo(collectionView.rx_itemsWithCellIdentifier(MainMoviesListCell.identifier, cellType: MainMoviesListCell.self)) { (_, model, cell) in
                model.backdropImage = ImagesService.sharedInstance.downloadImage(model.movieBackdropUrl)
                cell.updateUI(model)
             }
@@ -58,9 +58,9 @@ class MainMoviesListView: UIViewController {
       }
    }
 
-   override func viewWillAppear(animated: Bool) {
+   override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-      navigationController?.navigationBarHidden = true
+      navigationController?.isNavigationBarHidden = true
    }
 
 }

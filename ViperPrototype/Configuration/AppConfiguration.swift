@@ -10,7 +10,7 @@ import Foundation
 
 class AppConfiguration {
    
-   private (set) var tmdbConfiguration: TmdbConfiguration?
+   fileprivate (set) var tmdbConfiguration: TmdbConfiguration?
    
    static let sharedInstance = AppConfiguration()
    
@@ -22,7 +22,7 @@ class AppConfiguration {
       return tmdbConfiguration!.imagesBaseUrl + tmdbConfiguration!.backdropSizes[tmdbConfiguration!.backdropSizes.count-2]
    }
 
-   func setTmdbConfiguration(configuration: TmdbConfiguration) {
+   func setTmdbConfiguration(_ configuration: TmdbConfiguration) {
       tmdbConfiguration = configuration
    }
    

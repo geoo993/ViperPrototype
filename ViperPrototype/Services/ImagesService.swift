@@ -13,14 +13,14 @@ class ImagesService {
    
    static let sharedInstance: ImagesService = ImagesService()
 
-   private let urlSession: NSURLSession
-   private var imagesCache = NSCache()
+   fileprivate let urlSession: URLSession
+   fileprivate var imagesCache = NSCache<AnyObject, AnyObject>()
    
-   private init(urlSession: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())) {
+   fileprivate init(urlSession: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
       self.urlSession = urlSession
    }
    
-   func downloadImage(imageUrl: String) -> Observable<UIImage> {
+   func downloadImage(_ imageUrl: String) -> Observable<UIImage> {
       
       return Observable.deferred({ () -> Observable<UIImage> in
          

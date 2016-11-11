@@ -11,15 +11,15 @@ import RxSwift
 
 class MainMoviesListCell: UICollectionViewCell {
 
-   private let disposeBag = DisposeBag()
+   fileprivate let disposeBag = DisposeBag()
    
-   static var identifier: String { return String(self) }
+   static var identifier: String { return String(describing: self) }
    
-   @IBOutlet weak private var backgroundImage: UIImageView!
-   @IBOutlet weak private var titleLabel: UILabel!
-   @IBOutlet weak private var releaseDateLabel: UILabel!
+   @IBOutlet weak fileprivate var backgroundImage: UIImageView!
+   @IBOutlet weak fileprivate var titleLabel: UILabel!
+   @IBOutlet weak fileprivate var releaseDateLabel: UILabel!
  
-   func updateUI(model: MainMoviesListViewItem) {
+   func updateUI(_ model: MainMoviesListViewItem) {
       backgroundImage.image = nil
       titleLabel.text = model.movieTitle
       releaseDateLabel.text = model.movieReleaseDate

@@ -11,8 +11,8 @@ import RxSwift
 
 struct MainMoviesListInteractor {
 
-   private let apiDataManager: TmdbApiDataManager
-   private let disposeBag = DisposeBag()
+   fileprivate let apiDataManager: TmdbApiDataManager
+   fileprivate let disposeBag = DisposeBag()
 
    init(apiDataManager: TmdbApiDataManager) {
       self.apiDataManager = apiDataManager

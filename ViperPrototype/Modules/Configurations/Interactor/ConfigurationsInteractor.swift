@@ -11,8 +11,8 @@ import RxSwift
 
 struct ConfigurationsInteractor {
    
-   private let disposeBag = DisposeBag()
-   private let dataManager: TmdbApiDataManager
+   fileprivate let disposeBag = DisposeBag()
+   fileprivate let dataManager: TmdbApiDataManager
    
    init(dataManager: TmdbApiDataManager) {
       self.dataManager = dataManager

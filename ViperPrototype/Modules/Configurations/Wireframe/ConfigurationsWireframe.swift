@@ -10,9 +10,9 @@ import UIKit
 
 struct ConfigurationsWireframe {
    
-   static func presentConfigurationsModule(window: UIWindow) {
+   static func presentConfigurationsModule(_ window: UIWindow) {
       
-      let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ConfigurationsViewController") as! ConfigurationsView
+      let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfigurationsViewController") as! ConfigurationsView
       
       let apiService = TmdbApiService()
       let apiDataManager = TmdbApiDataManager(apiService: apiService)
@@ -21,14 +21,14 @@ struct ConfigurationsWireframe {
       
       if let navController = window.rootViewController as? UINavigationController {
          vc.presenter = presenter
-         navController.navigationBarHidden = true
+         navController.isNavigationBarHidden = true
          navController.pushViewController(vc, animated: false)
       }
       
    }
    
    func showMainMoviesList() {
-      MainMoviesListWireframe.presentMainMoviesListModule(UIApplication.sharedApplication().keyWindow!)
+      MainMoviesListWireframe.presentMainMoviesListModule(UIApplication.shared.keyWindow!)
    }
    
 }

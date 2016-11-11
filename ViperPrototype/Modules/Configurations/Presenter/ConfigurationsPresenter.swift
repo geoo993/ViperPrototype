@@ -11,9 +11,9 @@ import RxSwift
 
 struct ConfigurationsPresenter {
    
-   private let disposeBag = DisposeBag()
-   private let interactor: ConfigurationsInteractor
-   private let wireframe: ConfigurationsWireframe
+   fileprivate let disposeBag = DisposeBag()
+   fileprivate let interactor: ConfigurationsInteractor
+   fileprivate let wireframe: ConfigurationsWireframe
    
    init(interactor: ConfigurationsInteractor, wireframe: ConfigurationsWireframe) {
       self.interactor = interactor

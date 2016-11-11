@@ -10,26 +10,26 @@ import Foundation
 
 struct Movie {
    
-   private (set) var title: String
-   private (set) var releaseDate: NSDate
-   private (set) var posterPath: String
-   private (set) var backdropPath: String
+   fileprivate (set) var title: String
+   fileprivate (set) var releaseDate: Date
+   fileprivate (set) var posterPath: String
+   fileprivate (set) var backdropPath: String
    
    init(title: String) {
       self.title = title
-      releaseDate = NSDate(timeIntervalSince1970: 0)
+      releaseDate = Date(timeIntervalSince1970: 0)
       posterPath = ""
       backdropPath = ""
    }
 
-   init?(jsonDictionary: [NSObject: AnyObject]) {
+   init?(jsonDictionary: [AnyHashable: Any]) {
       
-      let formatter = NSDateFormatter()
+      let formatter = DateFormatter()
       formatter.dateFormat = "yyyy-MM-dd"
 
       guard let title = jsonDictionary["original_title"] as? String,
          let releaseDateString = jsonDictionary["release_date"] as? String,
-         let releaseDate = formatter.dateFromString(releaseDateString),
+         let releaseDate = formatter.date(from: releaseDateString),
          let posterPath = jsonDictionary["poster_path"] as? String,
          let backdropPath = jsonDictionary["backdrop_path"] as? String else { return nil }
       
@@ -40,11 +40,11 @@ struct Movie {
       
    }
    
-   mutating func updatePosterPath(baseUrl: String) {
+   mutating func updatePosterPath(_ baseUrl: String) {
       posterPath = baseUrl + posterPath
    }
 
-   mutating func updateBackdropPath(baseUrl: String) {
+   mutating func updateBackdropPath(_ baseUrl: String) {
       backdropPath = baseUrl + backdropPath
    }
 
