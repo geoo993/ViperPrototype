@@ -29,7 +29,12 @@ public class SegueViewController: UIViewController {
     }
     
     public var profileSegue: AnyObserver<ProfileViewModel> {
-        return NavigationSegue(fromViewController: self.navigationController!,
+        guard let navigationController = self.navigationController
+            else {
+                return AnyObserver<ProfileViewModel>{ _ in return  }
+            }
+        
+        return NavigationSegue(fromViewController: navigationController,
                                toViewControllerFactory: { (sender, context) -> ProfileViewController in
                                 let profileViewController: ProfileViewController = ProfileViewController()
                                 profileViewController.profileViewModel = context
@@ -50,15 +55,15 @@ public class SegueViewController: UIViewController {
         
         print("pushButton", pushButton)
 
-//
-//        pushButton.rx.tap
-//            .map {
-//                return ProfileViewModel(name: "John Doe",
-//                                        email: "JohnDoe@example.com",
-//                                        avatar: UIImage(named: "avatar"))
-//            }
-//            .bindTo(profileSegue)
-//            .addDisposableTo(disposeBag)
+
+        pushButton.rx.tap
+            .map {
+                return ProfileViewModel(name: "John Doe",
+                                        email: "JohnDoe@example.com",
+                                        avatar: UIImage(named: "avatar"))
+            }
+            .bindTo(profileSegue)
+            .addDisposableTo(disposeBag)
     }
     
 }
