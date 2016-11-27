@@ -3,10 +3,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public typealias BaseViewController = UIViewController
-public typealias SecondViewController = UIViewController
-
-public class ProfileViewController: BaseViewController {
+public class ProfileViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     

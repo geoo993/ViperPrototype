@@ -29,6 +29,8 @@
 		20C530611C6FF1F5008D1056 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C530601C6FF1F5008D1056 /* ConfigurationsView.swift */; };
 		20C530641C6FFA48008D1056 /* TmdbConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C530631C6FFA48008D1056 /* TmdbConfiguration.swift */; };
 		20C530661C6FFA8B008D1056 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C530651C6FFA8B008D1056 /* AppConfiguration.swift */; };
+		36350E151DEB1EBA0023DAA8 /* FeatherweightRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36350DF91DEB1E930023DAA8 /* FeatherweightRouter.framework */; };
+		36350E161DEB1EBA0023DAA8 /* FeatherweightRouter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36350DF91DEB1E930023DAA8 /* FeatherweightRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36553BCE1DD5DD6B00E0E527 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36553BA71DD5DD5F00E0E527 /* RxSwift.framework */; };
 		36553BCF1DD5DD6B00E0E527 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36553BA71DD5DD5F00E0E527 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36553BD21DD5DD7300E0E527 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36553BAF1DD5DD5F00E0E527 /* RxCocoa.framework */; };
@@ -43,6 +45,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		36350DF81DEB1E930023DAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7349E73F1C3DD665004A507B;
+			remoteInfo = "FeatherweightRouter-iOS";
+		};
+		36350DFA1DEB1E930023DAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7349E7781C3DD798004A507B;
+			remoteInfo = "FeatherweightRouter-iOSTests";
+		};
+		36350DFC1DEB1E930023DAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 737DF5A71D0D6EB200614CC0;
+			remoteInfo = "FeatherweightRouter-macOS";
+		};
+		36350DFE1DEB1E930023DAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 737DF5B01D0D6EB200614CC0;
+			remoteInfo = "FeatherweightRouter-macOSTests";
+		};
+		36350E001DEB1E930023DAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7349E7991C3DD963004A507B;
+			remoteInfo = "FeatherweightRouter-iOSDemo";
+		};
+		36350E171DEB1EBA0023DAA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7349E73E1C3DD665004A507B;
+			remoteInfo = "FeatherweightRouter-iOS";
+		};
 		36553BA61DD5DD5F00E0E527 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */;
@@ -243,6 +287,7 @@
 			files = (
 				36BCF99C1DEAF6C900A69B6A /* RxSegue.framework in CopyFiles */,
 				36553BD31DD5DD7300E0E527 /* RxCocoa.framework in CopyFiles */,
+				36350E161DEB1EBA0023DAA8 /* FeatherweightRouter.framework in CopyFiles */,
 				36553BCF1DD5DD6B00E0E527 /* RxSwift.framework in CopyFiles */,
 				36BCF97E1DEACDC100A69B6A /* RxGesture.framework in CopyFiles */,
 			);
@@ -275,6 +320,7 @@
 		20C530601C6FF1F5008D1056 /* ConfigurationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		20C530631C6FFA48008D1056 /* TmdbConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbConfiguration.swift; sourceTree = "<group>"; };
 		20C530651C6FFA8B008D1056 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FeatherweightRouter.xcodeproj; path = Carthage/Checkouts/FeatherweightRouter/FeatherweightRouter.xcodeproj; sourceTree = "<group>"; };
 		36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Carthage/Checkouts/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
 		367B0F5C1DEB0641005972E6 /* NewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewView.xib; sourceTree = "<group>"; };
 		36B61D5B1DEAC16800358699 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -291,6 +337,7 @@
 			files = (
 				36BCF99B1DEAF6C900A69B6A /* RxSegue.framework in Frameworks */,
 				36553BD21DD5DD7300E0E527 /* RxCocoa.framework in Frameworks */,
+				36350E151DEB1EBA0023DAA8 /* FeatherweightRouter.framework in Frameworks */,
 				36553BCE1DD5DD6B00E0E527 /* RxSwift.framework in Frameworks */,
 				36BCF97D1DEACDC100A69B6A /* RxGesture.framework in Frameworks */,
 			);
@@ -459,6 +506,7 @@
 		20A6800A1C6F54CE00898298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */,
 				36BCF9951DEAF6AA00A69B6A /* RxSegue.xcodeproj */,
 				36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */,
 				36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */,
@@ -525,6 +573,18 @@
 				20C530651C6FFA8B008D1056 /* AppConfiguration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		36350DF11DEB1E930023DAA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36350DF91DEB1E930023DAA8 /* FeatherweightRouter.framework */,
+				36350DFB1DEB1E930023DAA8 /* FeatherweightRouterTests.xctest */,
+				36350DFD1DEB1E930023DAA8 /* FeatherweightRouter.framework */,
+				36350DFF1DEB1E930023DAA8 /* FeatherweightRouterTests-macOS.xctest */,
+				36350E011DEB1E930023DAA8 /* FeatherweightRouterDemo.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		36553B901DD5DD5F00E0E527 /* Products */ = {
@@ -607,6 +667,7 @@
 				36553BD51DD5DD7300E0E527 /* PBXTargetDependency */,
 				36BCF9801DEACDC100A69B6A /* PBXTargetDependency */,
 				36BCF99E1DEAF6C900A69B6A /* PBXTargetDependency */,
+				36350E181DEB1EBA0023DAA8 /* PBXTargetDependency */,
 			);
 			name = ViperPrototype;
 			productName = ViperPrototype;
@@ -643,6 +704,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 36350DF11DEB1E930023DAA8 /* Products */;
+					ProjectRef = 36350DF01DEB1E930023DAA8 /* FeatherweightRouter.xcodeproj */;
+				},
+				{
 					ProductGroup = 36553B901DD5DD5F00E0E527 /* Products */;
 					ProjectRef = 36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */;
 				},
@@ -663,6 +728,41 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		36350DF91DEB1E930023DAA8 /* FeatherweightRouter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeatherweightRouter.framework;
+			remoteRef = 36350DF81DEB1E930023DAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36350DFB1DEB1E930023DAA8 /* FeatherweightRouterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FeatherweightRouterTests.xctest;
+			remoteRef = 36350DFA1DEB1E930023DAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36350DFD1DEB1E930023DAA8 /* FeatherweightRouter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeatherweightRouter.framework;
+			remoteRef = 36350DFC1DEB1E930023DAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36350DFF1DEB1E930023DAA8 /* FeatherweightRouterTests-macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "FeatherweightRouterTests-macOS.xctest";
+			remoteRef = 36350DFE1DEB1E930023DAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36350E011DEB1E930023DAA8 /* FeatherweightRouterDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = FeatherweightRouterDemo.app;
+			remoteRef = 36350E001DEB1E930023DAA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		36553BA71DD5DD5F00E0E527 /* RxSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -872,6 +972,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		36350E181DEB1EBA0023DAA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FeatherweightRouter-iOS";
+			targetProxy = 36350E171DEB1EBA0023DAA8 /* PBXContainerItemProxy */;
+		};
 		36553BD11DD5DD6B00E0E527 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RxSwift-iOS";

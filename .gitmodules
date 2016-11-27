@@ -7,3 +7,6 @@
 [submodule "Carthage/Checkouts/RxSegue"]
 	path = Carthage/Checkouts/RxSegue
 	url = https://github.com/RxSwiftCommunity/RxSegue.git
+[submodule "Carthage/Checkouts/FeatherweightRouter"]
+	path = Carthage/Checkouts/FeatherweightRouter
+	url = https://github.com/FeatherweightLabs/FeatherweightRouter.git
