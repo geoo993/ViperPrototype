@@ -2,3 +2,4 @@
 Carthage/Build
 *.xcscmblueprint
 *.xcbkptlist
+*.xctimeline
