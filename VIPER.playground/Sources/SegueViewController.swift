@@ -31,6 +31,7 @@ public class SegueViewController: UIViewController {
     public var profileSegue: AnyObserver<ProfileViewModel> {
         guard let navigationController = self.navigationController
             else {
+                print(#file, #line, "🚫", "no navigation controller")
                 return AnyObserver<ProfileViewModel>{ _ in return  }
             }
         
