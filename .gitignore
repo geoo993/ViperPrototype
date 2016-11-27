@@ -1,3 +1,4 @@
 *.xcuserstate
 Carthage/Build
 *.xcscmblueprint
+*.xcbkptlist
