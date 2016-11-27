@@ -15,9 +15,9 @@ class MainMoviesListCell: UICollectionViewCell {
    
    static var identifier: String { return String(describing: self) }
    
-   @IBOutlet weak fileprivate var backgroundImage: UIImageView!
-   @IBOutlet weak fileprivate var titleLabel: UILabel!
-   @IBOutlet weak fileprivate var releaseDateLabel: UILabel!
+   @IBOutlet weak public var backgroundImage: UIImageView!
+   @IBOutlet weak public var titleLabel: UILabel!
+   @IBOutlet weak public var releaseDateLabel: UILabel!
  
    func updateUI(_ model: MainMoviesListViewItem) {
       backgroundImage.image = nil

@@ -39,7 +39,10 @@ struct MainMoviesListPresenter {
          return Disposables.create {}
          
       }
-
    }
+    
+    func showDetail() {
+        wireframe.showDetail()
+    }
    
 }

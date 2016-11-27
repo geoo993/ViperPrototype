@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxGesture
 
 class MainMoviesListCollectionFLowLayout: UICollectionViewFlowLayout {
 
@@ -54,6 +55,9 @@ class MainMoviesListView: UIViewController {
             { (_, model, cell) in
                 var newModel = model
                newModel.backdropImage = ImagesService.sharedInstance.downloadImage(model.movieBackdropUrl)
+                cell.backgroundImage.rx.gesture(.tap).subscribe(onNext : { tap in
+                    presenter.showDetail()
+                }).addDisposableTo(self.disposeBag)
                cell.updateUI(newModel)
             }
             .addDisposableTo(disposeBag)
