@@ -32,15 +32,15 @@ public class SegueViewController: UIViewController {
         guard let navigationController = self.navigationController
             else {
                 print(#file, #line, "🚫", "no navigation controller")
-                return AnyObserver<ProfileViewModel>{ _ in return  }
+                return AnyObserver<ProfileViewModel>{ _ in return }
             }
         
         return NavigationSegue(fromViewController: navigationController,
-                               toViewControllerFactory: { (sender, context) -> ProfileViewController in
-                                let profileViewController: ProfileViewController = ProfileViewController()
-                                profileViewController.profileViewModel = context
-                                return profileViewController
-        }).asObserver()
+            toViewControllerFactory: { (sender, context) -> ProfileViewController in
+                let profileViewController = ProfileViewController()
+                profileViewController.profileViewModel = context
+                return profileViewController
+            }).asObserver()
     }
     
     override public func viewDidLoad() {
