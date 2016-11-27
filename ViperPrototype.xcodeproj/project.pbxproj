@@ -33,6 +33,10 @@
 		36553BCF1DD5DD6B00E0E527 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36553BA71DD5DD5F00E0E527 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36553BD21DD5DD7300E0E527 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36553BAF1DD5DD5F00E0E527 /* RxCocoa.framework */; };
 		36553BD31DD5DD7300E0E527 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36553BAF1DD5DD5F00E0E527 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36B61D5C1DEAC16800358699 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 36B61D5B1DEAC16800358699 /* Cartfile */; };
+		36B61D5E1DEAC16F00358699 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 36B61D5D1DEAC16F00358699 /* Cartfile.resolved */; };
+		36BCF97D1DEACDC100A69B6A /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BCF97A1DEACD6900A69B6A /* RxGesture.framework */; };
+		36BCF97E1DEACDC100A69B6A /* RxGesture.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36BCF97A1DEACD6900A69B6A /* RxGesture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +194,27 @@
 			remoteGlobalIDString = C80938F51B8A71760088E94D;
 			remoteInfo = "RxCocoa-iOS";
 		};
+		36BCF9791DEACD6900A69B6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36B61D951DEAC8E900358699;
+			remoteInfo = RxGesture;
+		};
+		36BCF97B1DEACD6900A69B6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36B61D9E1DEAC8E900358699;
+			remoteInfo = RxGestureTests;
+		};
+		36BCF97F1DEACDC100A69B6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 36B61D941DEAC8E900358699;
+			remoteInfo = RxGesture;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -201,6 +226,7 @@
 			files = (
 				36553BD31DD5DD7300E0E527 /* RxCocoa.framework in CopyFiles */,
 				36553BCF1DD5DD6B00E0E527 /* RxSwift.framework in CopyFiles */,
+				36BCF97E1DEACDC100A69B6A /* RxGesture.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +258,9 @@
 		20C530631C6FFA48008D1056 /* TmdbConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbConfiguration.swift; sourceTree = "<group>"; };
 		20C530651C6FFA8B008D1056 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Carthage/Checkouts/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
+		36B61D5B1DEAC16800358699 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		36B61D5D1DEAC16F00358699 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxGesture.xcodeproj; path = Carthage/Checkouts/RxGesture/RxGesture/RxGesture.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +270,7 @@
 			files = (
 				36553BD21DD5DD7300E0E527 /* RxCocoa.framework in Frameworks */,
 				36553BCE1DD5DD6B00E0E527 /* RxSwift.framework in Frameworks */,
+				36BCF97D1DEACDC100A69B6A /* RxGesture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +280,7 @@
 		20A67FA81C6F382D00898298 = {
 			isa = PBXGroup;
 			children = (
+				36B61D481DEAC14D00358699 /* Config */,
 				20A6800A1C6F54CE00898298 /* Frameworks */,
 				20A67FB31C6F382E00898298 /* ViperPrototype */,
 				20A67FB21C6F382E00898298 /* Products */,
@@ -404,6 +435,7 @@
 		20A6800A1C6F54CE00898298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */,
 				36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */,
 			);
 			name = Frameworks;
@@ -497,6 +529,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36B61D481DEAC14D00358699 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				36B61D5B1DEAC16800358699 /* Cartfile */,
+				36B61D5D1DEAC16F00358699 /* Cartfile.resolved */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		36BCF9621DEACD6900A69B6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36BCF97A1DEACD6900A69B6A /* RxGesture.framework */,
+				36BCF97C1DEACD6900A69B6A /* RxGestureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +564,7 @@
 			dependencies = (
 				36553BD11DD5DD6B00E0E527 /* PBXTargetDependency */,
 				36553BD51DD5DD7300E0E527 /* PBXTargetDependency */,
+				36BCF9801DEACDC100A69B6A /* PBXTargetDependency */,
 			);
 			name = ViperPrototype;
 			productName = ViperPrototype;
@@ -533,6 +584,7 @@
 					20A67FB01C6F382D00898298 = {
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -551,6 +603,10 @@
 				{
 					ProductGroup = 36553B901DD5DD5F00E0E527 /* Products */;
 					ProjectRef = 36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */;
+				},
+				{
+					ProductGroup = 36BCF9621DEACD6900A69B6A /* Products */;
+					ProjectRef = 36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -701,6 +757,20 @@
 			remoteRef = 36553BCC1DD5DD5F00E0E527 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		36BCF97A1DEACD6900A69B6A /* RxGesture.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxGesture.framework;
+			remoteRef = 36BCF9791DEACD6900A69B6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36BCF97C1DEACD6900A69B6A /* RxGestureTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RxGestureTests.xctest;
+			remoteRef = 36BCF97B1DEACD6900A69B6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -710,6 +780,8 @@
 			files = (
 				20A67FBF1C6F382E00898298 /* LaunchScreen.storyboard in Resources */,
 				20A67FBC1C6F382E00898298 /* Assets.xcassets in Resources */,
+				36B61D5C1DEAC16800358699 /* Cartfile in Resources */,
+				36B61D5E1DEAC16F00358699 /* Cartfile.resolved in Resources */,
 				20A67FBA1C6F382E00898298 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +827,11 @@
 			isa = PBXTargetDependency;
 			name = "RxCocoa-iOS";
 			targetProxy = 36553BD41DD5DD7300E0E527 /* PBXContainerItemProxy */;
+		};
+		36BCF9801DEACDC100A69B6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxGesture;
+			targetProxy = 36BCF97F1DEACDC100A69B6A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -869,6 +946,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -886,6 +965,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
