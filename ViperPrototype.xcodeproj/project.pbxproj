@@ -33,10 +33,13 @@
 		36553BCF1DD5DD6B00E0E527 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36553BA71DD5DD5F00E0E527 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36553BD21DD5DD7300E0E527 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36553BAF1DD5DD5F00E0E527 /* RxCocoa.framework */; };
 		36553BD31DD5DD7300E0E527 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36553BAF1DD5DD5F00E0E527 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		367B0F5D1DEB0641005972E6 /* NewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 367B0F5C1DEB0641005972E6 /* NewView.xib */; };
 		36B61D5C1DEAC16800358699 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 36B61D5B1DEAC16800358699 /* Cartfile */; };
 		36B61D5E1DEAC16F00358699 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 36B61D5D1DEAC16F00358699 /* Cartfile.resolved */; };
 		36BCF97D1DEACDC100A69B6A /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BCF97A1DEACD6900A69B6A /* RxGesture.framework */; };
 		36BCF97E1DEACDC100A69B6A /* RxGesture.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36BCF97A1DEACD6900A69B6A /* RxGesture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36BCF99B1DEAF6C900A69B6A /* RxSegue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BCF99A1DEAF6AA00A69B6A /* RxSegue.framework */; };
+		36BCF99C1DEAF6C900A69B6A /* RxSegue.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36BCF99A1DEAF6AA00A69B6A /* RxSegue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +218,20 @@
 			remoteGlobalIDString = 36B61D941DEAC8E900358699;
 			remoteInfo = RxGesture;
 		};
+		36BCF9991DEAF6AA00A69B6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36BCF9951DEAF6AA00A69B6A /* RxSegue.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2242BE041CD0DB490072B9AA;
+			remoteInfo = "RxSegue-iOS";
+		};
+		36BCF99D1DEAF6C900A69B6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36BCF9951DEAF6AA00A69B6A /* RxSegue.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2242BE031CD0DB490072B9AA;
+			remoteInfo = "RxSegue-iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -224,6 +241,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				36BCF99C1DEAF6C900A69B6A /* RxSegue.framework in CopyFiles */,
 				36553BD31DD5DD7300E0E527 /* RxCocoa.framework in CopyFiles */,
 				36553BCF1DD5DD6B00E0E527 /* RxSwift.framework in CopyFiles */,
 				36BCF97E1DEACDC100A69B6A /* RxGesture.framework in CopyFiles */,
@@ -258,9 +276,12 @@
 		20C530631C6FFA48008D1056 /* TmdbConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbConfiguration.swift; sourceTree = "<group>"; };
 		20C530651C6FFA8B008D1056 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Carthage/Checkouts/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
+		367B0F5C1DEB0641005972E6 /* NewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewView.xib; sourceTree = "<group>"; };
 		36B61D5B1DEAC16800358699 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		36B61D5D1DEAC16F00358699 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxGesture.xcodeproj; path = Carthage/Checkouts/RxGesture/RxGesture/RxGesture.xcodeproj; sourceTree = "<group>"; };
+		36BCF9951DEAF6AA00A69B6A /* RxSegue.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSegue.xcodeproj; path = Carthage/Checkouts/RxSegue/RxSegue.xcodeproj; sourceTree = "<group>"; };
+		36BCF9A01DEAF7D700A69B6A /* VIPER.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VIPER.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BCF99B1DEAF6C900A69B6A /* RxSegue.framework in Frameworks */,
 				36553BD21DD5DD7300E0E527 /* RxCocoa.framework in Frameworks */,
 				36553BCE1DD5DD6B00E0E527 /* RxSwift.framework in Frameworks */,
 				36BCF97D1DEACDC100A69B6A /* RxGesture.framework in Frameworks */,
@@ -284,6 +306,7 @@
 				20A6800A1C6F54CE00898298 /* Frameworks */,
 				20A67FB31C6F382E00898298 /* ViperPrototype */,
 				20A67FB21C6F382E00898298 /* Products */,
+				36BCF99F1DEAF7AC00A69B6A /* Playgrounds */,
 			);
 			sourceTree = "<group>";
 		};
@@ -306,6 +329,7 @@
 				20A67FCC1C6F3A5700898298 /* Model */,
 				20A67FC61C6F38A400898298 /* Modules */,
 				20C530491C6FB983008D1056 /* Services */,
+				367B0F5C1DEB0641005972E6 /* NewView.xib */,
 			);
 			path = ViperPrototype;
 			sourceTree = "<group>";
@@ -435,6 +459,7 @@
 		20A6800A1C6F54CE00898298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36BCF9951DEAF6AA00A69B6A /* RxSegue.xcodeproj */,
 				36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */,
 				36553B8F1DD5DD5F00E0E527 /* Rx.xcodeproj */,
 			);
@@ -547,6 +572,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36BCF9961DEAF6AA00A69B6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36BCF99A1DEAF6AA00A69B6A /* RxSegue.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36BCF99F1DEAF7AC00A69B6A /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				36BCF9A01DEAF7D700A69B6A /* VIPER.playground */,
+			);
+			name = Playgrounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -565,6 +606,7 @@
 				36553BD11DD5DD6B00E0E527 /* PBXTargetDependency */,
 				36553BD51DD5DD7300E0E527 /* PBXTargetDependency */,
 				36BCF9801DEACDC100A69B6A /* PBXTargetDependency */,
+				36BCF99E1DEAF6C900A69B6A /* PBXTargetDependency */,
 			);
 			name = ViperPrototype;
 			productName = ViperPrototype;
@@ -607,6 +649,10 @@
 				{
 					ProductGroup = 36BCF9621DEACD6900A69B6A /* Products */;
 					ProjectRef = 36BCF9611DEACD6900A69B6A /* RxGesture.xcodeproj */;
+				},
+				{
+					ProductGroup = 36BCF9961DEAF6AA00A69B6A /* Products */;
+					ProjectRef = 36BCF9951DEAF6AA00A69B6A /* RxSegue.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -771,6 +817,13 @@
 			remoteRef = 36BCF97B1DEACD6900A69B6A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		36BCF99A1DEAF6AA00A69B6A /* RxSegue.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSegue.framework;
+			remoteRef = 36BCF9991DEAF6AA00A69B6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -779,6 +832,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20A67FBF1C6F382E00898298 /* LaunchScreen.storyboard in Resources */,
+				367B0F5D1DEB0641005972E6 /* NewView.xib in Resources */,
 				20A67FBC1C6F382E00898298 /* Assets.xcassets in Resources */,
 				36B61D5C1DEAC16800358699 /* Cartfile in Resources */,
 				36B61D5E1DEAC16F00358699 /* Cartfile.resolved in Resources */,
@@ -832,6 +886,11 @@
 			isa = PBXTargetDependency;
 			name = RxGesture;
 			targetProxy = 36BCF97F1DEACDC100A69B6A /* PBXContainerItemProxy */;
+		};
+		36BCF99E1DEAF6C900A69B6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RxSegue-iOS";
+			targetProxy = 36BCF99D1DEAF6C900A69B6A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
