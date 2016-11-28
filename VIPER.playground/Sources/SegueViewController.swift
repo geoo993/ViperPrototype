@@ -23,8 +23,8 @@ public class SegueViewController: UIViewController {
 
     public var voidSegue: AnyObserver<Void> {
         return ModalSegue(fromViewController: self,
-                          toViewControllerFactory: { (sender, context) -> UIViewController in //SecondViewController in
-                return UIViewController()
+                          toViewControllerFactory: { (sender, context) -> SecondViewController in
+                return SecondViewController()
         }).asObserver()
     }
     
@@ -49,13 +49,6 @@ public class SegueViewController: UIViewController {
         presentButton.rx.tap
             .bindTo(voidSegue)
             .addDisposableTo(disposeBag)
-    
-        let pvm = ProfileViewModel(name: "John Doe",
-                                    email: "JohnDoe@example.com",
-                                    avatar: UIImage(named: "avatar"))
-        
-        print("pushButton", pushButton)
-
 
         pushButton.rx.tap
             .map {

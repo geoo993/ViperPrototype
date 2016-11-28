@@ -1,4 +1,3 @@
-//: Playground - noun: a place where people can play
 
 import UIKit
 import RxSwift
@@ -7,9 +6,23 @@ import RxGesture
 import RxSegue
 import FeatherweightRouter
 
+func createRouter() -> Router<UIViewController, String> {
+    return Router(navigationPresenter(title: "Segue Fun!"))
+        .stack([
+            Router(segueViewPresenter()).route(predicate: { $0 == "segueScreen"})
+            ])
+}
 
+func appCoordinator() -> UIViewController {
+    var router: Router<UIViewController, String>!
+    router = createRouter()
+    
+    router.setRoute("segueScreen")
+    
+    return router.presentable
+}
 
-let vc = SegueViewController()
+let vc = appCoordinator()
 
 import PlaygroundSupport
 PlaygroundPage.current.liveView = vc
