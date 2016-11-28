@@ -58,6 +58,12 @@ public class SegueViewController: UIViewController {
             }
             .bindTo(profileSegue)
             .addDisposableTo(disposeBag)
+        
+        dismissButton.rx.tap
+            .subscribe (onNext: { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
+            })
+            .addDisposableTo(disposeBag)
     }
     
 }

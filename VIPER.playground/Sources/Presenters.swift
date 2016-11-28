@@ -37,3 +37,8 @@ public func segueViewPresenter() -> UIPresenter {
     let mainViewController = SegueViewController()
     return Presenter(getPresentable: { mainViewController })
 }
+
+public func secondViewPresenter() -> UIPresenter {
+    let secondViewController = SecondViewController()
+    return Presenter(getPresentable: { secondViewController })
+}

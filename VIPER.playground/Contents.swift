@@ -9,7 +9,8 @@ import FeatherweightRouter
 func createRouter() -> Router<UIViewController, String> {
     return Router(navigationPresenter(title: "Segue Fun!"))
         .stack([
-            Router(segueViewPresenter()).route(predicate: { $0 == "segueScreen"})
+            Router(segueViewPresenter()).route(predicate: { $0 == "segueScreen"}),
+            Router(secondViewPresenter()).route(predicate: { $0 == "secondScreen"}),
             ])
 }
 
@@ -17,7 +18,7 @@ func appCoordinator() -> UIViewController {
     var router: Router<UIViewController, String>!
     router = createRouter()
     
-    router.setRoute("segueScreen")
+    router.setRoute("secondScreen")
     
     return router.presentable
 }
