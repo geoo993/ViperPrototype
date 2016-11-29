@@ -42,3 +42,8 @@ public func secondViewPresenter() -> UIPresenter {
     let secondViewController = SecondViewController()
     return Presenter(getPresentable: { secondViewController })
 }
+
+public func rootViewPresenter() -> UIPresenter {
+    let rootViewController = RootViewController()
+    return Presenter(getPresentable: { rootViewController })
+}
