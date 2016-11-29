@@ -26,6 +26,9 @@ func createRouter1(store: AppStore) -> Router<UIViewController, String> {
                         Router(secondViewPresenter(store: store)).route(predicate: { $0 == "secondScreen"}),
                         ]),
                 ] ),
+            
+            Router(secondViewPresenter(store: store)).route(predicate: { $0 == "finalScreen"})
+            
             ])
 }
 
