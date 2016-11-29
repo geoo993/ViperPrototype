@@ -6,20 +6,37 @@ import RxGesture
 import RxSegue
 import FeatherweightRouter
 
-func createRouter() -> Router<UIViewController, String> {
+func createRouter0(store: AppStore) -> Router<UIViewController, String> {
     return Router(navigationPresenter(title: "Segue Fun!"))
         .stack([
-            Router(rootViewPresenter()).route(predicate: { $0 == "rootScreen"}),
-            Router(segueViewPresenter()).route(predicate: { $0 == "segueScreen"}),
-            Router(secondViewPresenter()).route(predicate: { $0 == "secondScreen"}),
+            Router(rootViewPresenter(store: store)).route(predicate: { $0 == "rootScreen"}),
+            Router(segueViewPresenter(store: store)).route(predicate: { $0 == "segueScreen"}),
+            Router(secondViewPresenter(store: store)).route(predicate: { $0 == "secondScreen"}),
+            ])
+}
+
+func createRouter1(store: AppStore) -> Router<UIViewController, String> {
+    return Router(navigationPresenter(title: "Segue Fun!"))
+        .stack([
+            Router(rootViewPresenter(store: store)).route(predicate: { $0 == "rootScreen"},
+                children: [
+                    Router(segueViewPresenter(store: store)).route(predicate: { $0 == "segueScreen"},
+                       children: [
+                        Router(secondViewPresenter(store: store)).route(predicate: { $0 == "secondScreen"})
+                        ]),
+                ] ),
             ])
 }
 
 func appCoordinator() -> UIViewController {
     var router: Router<UIViewController, String>!
-    router = createRouter()
+    let store = AppStore() {
+        print($0)
+        router.setRoute($0)
+    }
+    router = createRouter1(store: store)
     
-    router.setRoute("rootScreen")
+    store.setPath("rootScreen")
     
     return router.presentable   
 }

@@ -7,8 +7,10 @@ import RxSwift
 public class SecondViewController: UIViewController {
     
     let disposeBag = DisposeBag()
- 
-    public init() {
+    let store : ProvidesRouteDispatch
+    
+    public init(store: AppStore) {
+        self.store = store
         let bundle = Bundle(for: SecondViewController.self)
         super.init(nibName: "SecondView", bundle: bundle)
     }
@@ -23,6 +25,7 @@ public class SecondViewController: UIViewController {
         dismissButton
             .rx.tap
             .subscribe(onNext:{ [weak self] in
+//                self?.store.dispatchRoute("segueScreen")
                 self?.dismiss(animated: true, completion: nil)
             })
             .addDisposableTo(disposeBag)

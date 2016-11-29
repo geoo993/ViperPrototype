@@ -12,7 +12,9 @@ public class SegueViewController: UIViewController {
     @IBOutlet public var presentButton: UIButton!
     @IBOutlet public weak var dismissButton: UIButton!
     
-    public init() {
+    let store : AppStore
+    public init(store: AppStore) {
+        self.store = store
         let bundle = Bundle(for: SegueViewController.self)
         super.init(nibName: "SegueView", bundle: bundle)
     }
@@ -24,7 +26,7 @@ public class SegueViewController: UIViewController {
     public var voidSegue: AnyObserver<Void> {
         return ModalSegue(fromViewController: self,
                           toViewControllerFactory: { (sender, context) -> SecondViewController in
-                return SecondViewController()
+                            return SecondViewController(store: self.store)
         }).asObserver()
     }
     
@@ -61,7 +63,8 @@ public class SegueViewController: UIViewController {
         
         dismissButton.rx.tap
             .subscribe (onNext: { [weak self] in
-                self?.dismiss(animated: true, completion: nil)
+//                self?.dismiss(animated: true, completion: nil)
+                self?.store.dispatchRoute("rootScreen")
             })
             .addDisposableTo(disposeBag)
     }

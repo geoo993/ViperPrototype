@@ -33,17 +33,17 @@ public func navigationPresenter(title: String) -> UIPresenter {
         setChildren: { navigationController.setViewControllers($0, animated: true) })
 }
 
-public func segueViewPresenter() -> UIPresenter {
-    let mainViewController = SegueViewController()
+public func segueViewPresenter(store: AppStore) -> UIPresenter {
+    let mainViewController = SegueViewController(store: store)
     return Presenter(getPresentable: { mainViewController })
 }
 
-public func secondViewPresenter() -> UIPresenter {
-    let secondViewController = SecondViewController()
+public func secondViewPresenter(store: AppStore) -> UIPresenter {
+    let secondViewController = SecondViewController(store: store)
     return Presenter(getPresentable: { secondViewController })
 }
 
-public func rootViewPresenter() -> UIPresenter {
-    let rootViewController = RootViewController()
+public func rootViewPresenter(store: AppStore) -> UIPresenter {
+    let rootViewController = RootViewController(store: store)
     return Presenter(getPresentable: { rootViewController })
 }

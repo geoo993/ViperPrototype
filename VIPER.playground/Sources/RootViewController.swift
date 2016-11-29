@@ -11,7 +11,9 @@ public class RootViewController: UIViewController {
     @IBOutlet public weak var presentButton : UIButton!
     
     let disposeBag = DisposeBag()
-    public init() {
+    let store : ProvidesRouteDispatch
+    public init(store: AppStore) {
+        self.store = store
         let bundle = Bundle(for: RootViewController.self)
         super.init(nibName: "RootView", bundle: bundle)
     }
@@ -24,9 +26,7 @@ public class RootViewController: UIViewController {
         presentButton.rx.tap
         .subscribe(onNext: {
             print(#file, #line, "navigationController", self.navigationController as Any)
-           self.present(SegueViewController(),
-                    animated: true,
-                    completion: nil)
+            self.store.dispatchRoute("segueScreen")
         })
         .addDisposableTo(disposeBag)
     }
