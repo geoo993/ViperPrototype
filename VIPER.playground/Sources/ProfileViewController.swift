@@ -12,8 +12,10 @@ public class ProfileViewController: UIViewController {
     @IBOutlet var emailLabel: UILabel!
     
     public var profileViewModel:ProfileViewModel!
+    let store : AppStore
     
-    public init() {
+    public init(store: AppStore) {
+        self.store = store
         let bundle = Bundle(for: ProfileViewController.self)
         super.init(nibName: "ProfileView", bundle: bundle)
     }

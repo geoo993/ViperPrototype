@@ -22,7 +22,8 @@ func createRouter1(store: AppStore) -> Router<UIViewController, String> {
                 children: [
                     Router(segueViewPresenter(store: store)).route(predicate: { $0 == "segueScreen"},
                        children: [
-                        Router(secondViewPresenter(store: store)).route(predicate: { $0 == "secondScreen"})
+                        Router(profileViewPresenter(store: store)).route(predicate: { $0 == "profileScreen"}),
+                        Router(secondViewPresenter(store: store)).route(predicate: { $0 == "secondScreen"}),
                         ]),
                 ] ),
             ])

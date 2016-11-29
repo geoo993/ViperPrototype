@@ -12,6 +12,7 @@ public class RootViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     let store : ProvidesRouteDispatch
+    
     public init(store: AppStore) {
         self.store = store
         let bundle = Bundle(for: RootViewController.self)
@@ -25,7 +26,7 @@ public class RootViewController: UIViewController {
     public override func viewDidLoad() {
         presentButton.rx.tap
         .subscribe(onNext: {
-            print(#file, #line, "navigationController", self.navigationController as Any)
+            //print(#file, #line, "navigationController", self.navigationController as Any)
             self.store.dispatchRoute("segueScreen")
         })
         .addDisposableTo(disposeBag)

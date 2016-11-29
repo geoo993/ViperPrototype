@@ -47,3 +47,14 @@ public func rootViewPresenter(store: AppStore) -> UIPresenter {
     let rootViewController = RootViewController(store: store)
     return Presenter(getPresentable: { rootViewController })
 }
+
+public func profileViewPresenter(store: AppStore) -> UIPresenter {
+    let profileViewController = ProfileViewController(store: store)
+    let image = UIImage(named: "man-avatar-silhouette.jpg")
+    print("image", image ?? "none")
+    let vm = ProfileViewModel(name: "John Doe",
+                            email: "JohnDoe@example.com",
+                            avatar: image)
+    profileViewController.profileViewModel = vm
+    return Presenter(getPresentable: { profileViewController })
+}

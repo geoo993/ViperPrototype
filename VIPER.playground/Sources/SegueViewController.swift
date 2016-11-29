@@ -30,20 +30,21 @@ public class SegueViewController: UIViewController {
         }).asObserver()
     }
     
-    public var profileSegue: AnyObserver<ProfileViewModel> {
-        guard let navigationController = self.navigationController
-            else {
-                print(#file, #line, "🚫", "no navigation controller")
-                return AnyObserver<ProfileViewModel>{ _ in return }
-            }
-        
-        return NavigationSegue(fromViewController: navigationController,
-            toViewControllerFactory: { (sender, context) -> ProfileViewController in
-                let profileViewController = ProfileViewController()
-                profileViewController.profileViewModel = context
-                return profileViewController
-            }).asObserver()
-    }
+//    public var profileSegue: AnyObserver<ProfileViewModel> {
+//        guard let navigationController = self.navigationController
+//            else {
+//                print(#file, #line, "🚫", "no navigation controller")
+//                return AnyObserver<ProfileViewModel>{ _ in return }
+//            }
+//        
+//        return NavigationSegue(fromViewController: navigationController,
+//            toViewControllerFactory: { (sender, context) -> ProfileViewController in
+//                let profileViewController = ProfileViewController()
+//                
+//                profileViewController.profileViewModel = context
+//                return profileViewController
+//            }).asObserver()
+//    }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +54,18 @@ public class SegueViewController: UIViewController {
             .addDisposableTo(disposeBag)
 
         pushButton.rx.tap
-            .map {
-                return ProfileViewModel(name: "John Doe",
-                                        email: "JohnDoe@example.com",
-                                        avatar: UIImage(named: "avatar"))
-            }
-            .bindTo(profileSegue)
-            .addDisposableTo(disposeBag)
+        .subscribe (onNext: { [weak self] in
+            self?.store.dispatchRoute("profileScreen")
+        })
+        .addDisposableTo(disposeBag)
+
+//            .map {
+//                return ProfileViewModel(name: "John Doe",
+//                                        email: "JohnDoe@example.com",
+//                                        avatar: UIImage(named: "avatar"))
+//            }
+//            .bindTo(profileSegue)
+//            .addDisposableTo(disposeBag)
         
         dismissButton.rx.tap
             .subscribe (onNext: { [weak self] in

@@ -24,7 +24,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fp5-Et-KMc">
                     <rect key="frame" x="0.0" y="100" width="375" height="467"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z95-p6-XE3">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="man-avatar-silhouette.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Z95-p6-XE3">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="426"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y83-w5-rG8">
@@ -51,4 +51,7 @@
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="man-avatar-silhouette.jpg" width="600" height="600"/>
+    </resources>
 </document>
